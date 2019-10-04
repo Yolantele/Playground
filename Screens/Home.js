@@ -1,31 +1,36 @@
 
 
-import React from 'react'
+import React, { useState } from 'react'
 import { Platform, StatusBar, StyleSheet, ScrollView, Text, Button} from 'react-native'
 
-class Home extends React.Component {
-  static navigationOptions = {
-    title: 'Welcome',
-  };
-  render() {
+
+const Home = ({navigation}) => {
+ 
+    const [counter, setCounter] = useState(0)
     const { container } = styles
-    const {navigate} = this.props.navigation;
+    const {navigate} = navigation;
+
     return (
       <ScrollView contentContainerStyle={container}>
-      
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
         <Text>Home</Text>
+        
         <Button
           title="Go to profile"
-          onPress={() => navigate('Profile', {name: 'Jane'})}
+          accessibilityLabel="Go to profile Button"
+          onPress={() => {
+            setCounter(counter + 1)
+            navigate('Profile', {name: 'Jane'})}
+          }
         />
+        <Text>{counter}</Text>
         <StatusBar/>
         
       </ScrollView>
     )
   
   }
-}
+
 
 const styles = StyleSheet.create({
   container: {

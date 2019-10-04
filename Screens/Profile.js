@@ -6,6 +6,7 @@ import { Platform, StatusBar, StyleSheet, ScrollView, Text} from 'react-native'
 class Profile extends React.Component {
   static navigationOptions = {
     title: 'Profile',
+    
   };
   render() {
     const { container } = styles
@@ -14,7 +15,6 @@ class Profile extends React.Component {
       
           {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
           <Text>Profile</Text>
-          
         </ScrollView>
     );
   
