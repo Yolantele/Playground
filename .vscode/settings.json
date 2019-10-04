@@ -1,0 +1,21 @@
+{
+    "jshint.options": {
+        "esversion": 6
+    },
+    "eslint.autoFixOnSave": false,
+    "eslint.enable": false,
+    "editor.snippetSuggestions": "none",
+    "editor.hover.enabled": false,
+    "editor.formatOnSave": false,
+    "javascript.format.enable": false,
+    "prettier.eslintIntegration": true,
+    "editor.trimAutoWhitespace": true,
+    "editor.formatOnPaste": false,
+    "editor.formatOnType": false,
+    "editor.formatOnSave": false,
+    "prettier.semi": false,
+    "prettier.jsxBracketSameLine": true,
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 2,
+    "prettier.printWidth": 120,
+}
