@@ -9,7 +9,7 @@ const TheText = ({children, bold, light, ...rest}) => {
   const fontWeight = () => {
     if (bold)  return 'bold' 
     if (light) return '100'
-    return '300'
+    return '400'
   }
   
   return( 

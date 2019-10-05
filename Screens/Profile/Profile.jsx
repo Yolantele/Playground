@@ -1,7 +1,9 @@
 
 
 import React from 'react'
-import { StyleSheet, ScrollView, Text} from 'react-native'
+import { ScrollView} from 'react-native'
+import { TheText } from '../../UI'
+import styles from './ProfileStyle'
 
 class Profile extends React.Component {
   static navigationOptions = {
@@ -10,24 +12,15 @@ class Profile extends React.Component {
   }
   render() {
     const { container } = styles
-    console.log('debugging===')
+    
     return (
         <ScrollView contentContainerStyle={container}>
-          <Text>Profile</Text>
+          <TheText bold>Profile</TheText>
         </ScrollView>
     );
   
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    display: 'flex',
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-  },
-})
 
 export default Profile

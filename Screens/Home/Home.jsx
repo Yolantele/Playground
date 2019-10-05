@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { StyleSheet, ScrollView, Text, Button} from 'react-native'
+import { ScrollView, Button, View} from 'react-native'
 import axios from 'axios'
-import TheText from '../UI/TheText'
+import { TheText } from '../../UI'
+import styles from './HomeStyle'
 
 const QUOTE_API = 'https://favqs.com/api/qotd'
 
@@ -9,7 +10,7 @@ const Home = ({navigation}) => {
   const [counter, setCounter] = useState(0)
   const [quote, setQuote] = useState({})
 
-  const { container } = styles
+  const { container, quotes } = styles
   const {navigate} = navigation
 
   useEffect(() => {
@@ -22,34 +23,23 @@ const Home = ({navigation}) => {
   return (
     <ScrollView contentContainerStyle={container}>
       <TheText bold>Home</TheText>
-      <TheText>{quote.body}</TheText>
-      <TheText light>{quote.author}</TheText>
+      <View style={quotes}>
+        <TheText>{quote.body}</TheText>
+        <TheText light>{quote.author}</TheText>
+      </View>
+
 
       <Button
-        title="Go to profile"
+        title={`Go to Profile ${counter}`}
         accessibilityLabel="Go to profile Button"
         onPress={() => {
           setCounter(counter + 1)
           navigate('Profile', {name: 'Jane'})}
         }
       />
-      <Text>{counter}</Text>
-      
     </ScrollView>
   )
 
 }
-
-
-const styles = StyleSheet.create({
-  container: {
-    display: 'flex',
-    flex: 1,
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    margin: 20
-  },
-})
 
 export default Home
