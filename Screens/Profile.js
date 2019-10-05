@@ -1,19 +1,18 @@
 
 
 import React from 'react'
-import { Platform, StatusBar, StyleSheet, ScrollView, Text} from 'react-native'
+import { StyleSheet, ScrollView, Text} from 'react-native'
 
 class Profile extends React.Component {
   static navigationOptions = {
     title: 'Profile',
     
-  };
+  }
   render() {
     const { container } = styles
+    console.log('debugging===')
     return (
         <ScrollView contentContainerStyle={container}>
-      
-          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
           <Text>Profile</Text>
         </ScrollView>
     );
