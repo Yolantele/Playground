@@ -1,1 +1,4 @@
-export { default as TheText } from './TheText'
+export {
+  default as TheText
+}
+from './TheText'

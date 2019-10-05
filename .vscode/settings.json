@@ -6,7 +6,7 @@
     "eslint.enable": true,
     "editor.snippetSuggestions": "inline",
     "editor.hover.enabled": false,
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
     "javascript.format.enable": false,
     "prettier.eslintIntegration": false,
     "editor.trimAutoWhitespace": true,
@@ -17,4 +17,6 @@
     "prettier.singleQuote": true,
     "prettier.tabWidth": 2,
     "prettier.printWidth": 120,
+    "editor.autoClosingBrackets": true,
+    "prettier.bracketSpacing": true
 }
