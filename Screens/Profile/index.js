@@ -1,4 +1,4 @@
 export {
-  default as Profile
+    default as Profile
 }
 from './Profile'
