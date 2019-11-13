@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* PlayGroundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PlayGroundTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -20,6 +19,8 @@
 		5F0175C9EBA00E7F028BB544 /* libPods-PlayGround-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7D7A9B53F0FD1E40BDB14B /* libPods-PlayGround-tvOS.a */; };
 		DA3F016D042F6343AEC4911B /* libPods-PlayGroundTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD57A24C4F9795225ADA627B /* libPods-PlayGroundTests.a */; };
 		F4BC519CD6F927FE1C13E78E /* libPods-PlayGround-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CC6FF01AEBFD189281CC44 /* libPods-PlayGround-tvOSTests.a */; };
+		A64C13528CF540308A6EBA3D /* antfill.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 612C1543B18644D780E5928F /* antfill.ttf */; };
+		65E5149DA5F34D6F960B2E12 /* antoutline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56E43CBB7BBD432DBD3C34E2 /* antoutline.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		E66A87CB602266ED31A4F6CA /* Pods-PlayGround-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGround-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-PlayGround-tvOSTests/Pods-PlayGround-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		612C1543B18644D780E5928F /* antfill.ttf */ = {isa = PBXFileReference; name = "antfill.ttf"; path = "../node_modules/@ant-design/icons-react-native/fonts/antfill.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		56E43CBB7BBD432DBD3C34E2 /* antoutline.ttf */ = {isa = PBXFileReference; name = "antoutline.ttf"; path = "../node_modules/@ant-design/icons-react-native/fonts/antoutline.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +168,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				FB0054E7E9D027FFDD66FA1F /* Pods */,
+				007CBA05A4ED4995881F5320 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -197,6 +201,16 @@
 			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		007CBA05A4ED4995881F5320 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				612C1543B18644D780E5928F /* antfill.ttf */,
+				56E43CBB7BBD432DBD3C34E2 /* antoutline.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -285,7 +299,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -338,6 +352,8 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				A64C13528CF540308A6EBA3D /* antfill.ttf in Resources */,
+				65E5149DA5F34D6F960B2E12 /* antoutline.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
