@@ -1,6 +1,11 @@
 # Native app
 
-prerequisites: xCode and simulator
+### Prerequisites
+
+- xCode and Simulator
+- Android studio and emulator
+
+### To Start the Application
 
 1. clone the repo
 2. then install all the dependancies:
@@ -8,8 +13,16 @@ prerequisites: xCode and simulator
    `cd ios/`
    `pod install`
    `cd ..`
+3. Run the app on ios :
+   `yarn run s`
 
-3.
+### Resolving Pod Build errors:
 
-run the app on ios :
-`yarn s`
+0. link missing modules that did not link to ios or android build files:
+   `react-native link @any-missing-module`
+
+1. remove old ios/Podfile and install
+   `pod clean && pod install`
+
+1. remoce old node modules and install:
+   `rm -rf node_modules/ && yarn install`
