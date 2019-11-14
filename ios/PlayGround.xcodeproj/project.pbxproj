@@ -7,20 +7,20 @@
 	objects = {
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* PlayGroundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PlayGroundTests.m */; };
+		043E14EEAF557BCABEC1B6B0 /* libPods-PlayGround-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E74D3480E344531605A32409 /* libPods-PlayGround-tvOS.a */; };
+		069BC41818AD79082B38B27A /* libPods-PlayGround.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB58475339A9EBDFD439F617 /* libPods-PlayGround.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		1B310D9BE36587A56BFFF2CE /* libPods-PlayGroundTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2E8A7891895732544B9A19 /* libPods-PlayGroundTests.a */; };
+		1CF0C9C9D105FCC7AA98766C /* libPods-PlayGround-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8393190CC45C75F33AB066 /* libPods-PlayGround-tvOSTests.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* PlayGroundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PlayGroundTests.m */; };
-		4FA5FCF0D0AE2B776E45B07F /* libPods-PlayGround.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15E8181778B107492B627EEE /* libPods-PlayGround.a */; };
-		5F0175C9EBA00E7F028BB544 /* libPods-PlayGround-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7D7A9B53F0FD1E40BDB14B /* libPods-PlayGround-tvOS.a */; };
-		DA3F016D042F6343AEC4911B /* libPods-PlayGroundTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD57A24C4F9795225ADA627B /* libPods-PlayGroundTests.a */; };
-		F4BC519CD6F927FE1C13E78E /* libPods-PlayGround-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CC6FF01AEBFD189281CC44 /* libPods-PlayGround-tvOSTests.a */; };
-		A64C13528CF540308A6EBA3D /* antfill.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 612C1543B18644D780E5928F /* antfill.ttf */; };
 		65E5149DA5F34D6F960B2E12 /* antoutline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56E43CBB7BBD432DBD3C34E2 /* antoutline.ttf */; };
+		A64C13528CF540308A6EBA3D /* antfill.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 612C1543B18644D780E5928F /* antfill.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,24 +52,25 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = PlayGround/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PlayGround/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PlayGround/main.m; sourceTree = "<group>"; };
-		15E8181778B107492B627EEE /* libPods-PlayGround.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlayGround.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2282891FF4F1C7C00B05B6EB /* Pods-PlayGround-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGround-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-PlayGround-tvOS/Pods-PlayGround-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		28540C27B791DA78963A1449 /* Pods-PlayGround-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGround-tvOS.release.xcconfig"; path = "Target Support Files/Pods-PlayGround-tvOS/Pods-PlayGround-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		14350AB9905CF90BBF4AB8AD /* Pods-PlayGround-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGround-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-PlayGround-tvOSTests/Pods-PlayGround-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* PlayGround-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PlayGround-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* PlayGround-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PlayGround-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E1EF8E5D60DCC88653E8E6F /* Pods-PlayGround-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGround-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-PlayGround-tvOSTests/Pods-PlayGround-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		3A7D7A9B53F0FD1E40BDB14B /* libPods-PlayGround-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlayGround-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E54CDD803E582C8A84A2653 /* Pods-PlayGroundTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGroundTests.debug.xcconfig"; path = "Target Support Files/Pods-PlayGroundTests/Pods-PlayGroundTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5A1EB08F50A6D0DA7A44CE18 /* Pods-PlayGroundTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGroundTests.release.xcconfig"; path = "Target Support Files/Pods-PlayGroundTests/Pods-PlayGroundTests.release.xcconfig"; sourceTree = "<group>"; };
-		6B48720152E25E0D079A5287 /* Pods-PlayGround.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGround.debug.xcconfig"; path = "Target Support Files/Pods-PlayGround/Pods-PlayGround.debug.xcconfig"; sourceTree = "<group>"; };
-		94CC6FF01AEBFD189281CC44 /* libPods-PlayGround-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlayGround-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		94D4C92152B88455ED7D21E6 /* Pods-PlayGround.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGround.release.xcconfig"; path = "Target Support Files/Pods-PlayGround/Pods-PlayGround.release.xcconfig"; sourceTree = "<group>"; };
-		CD57A24C4F9795225ADA627B /* libPods-PlayGroundTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlayGroundTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E66A87CB602266ED31A4F6CA /* Pods-PlayGround-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGround-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-PlayGround-tvOSTests/Pods-PlayGround-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		56E43CBB7BBD432DBD3C34E2 /* antoutline.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = antoutline.ttf; path = "../node_modules/@ant-design/icons-react-native/fonts/antoutline.ttf"; sourceTree = "<group>"; };
+		612C1543B18644D780E5928F /* antfill.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = antfill.ttf; path = "../node_modules/@ant-design/icons-react-native/fonts/antfill.ttf"; sourceTree = "<group>"; };
+		880EC9336C46271C5E6A820F /* Pods-PlayGround-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGround-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-PlayGround-tvOSTests/Pods-PlayGround-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		A14F51DE11D9E03628AE30F3 /* Pods-PlayGround.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGround.debug.xcconfig"; path = "Target Support Files/Pods-PlayGround/Pods-PlayGround.debug.xcconfig"; sourceTree = "<group>"; };
+		A8EBA0B7BDDF629D3F596FE0 /* Pods-PlayGround.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGround.release.xcconfig"; path = "Target Support Files/Pods-PlayGround/Pods-PlayGround.release.xcconfig"; sourceTree = "<group>"; };
+		AE2E8A7891895732544B9A19 /* libPods-PlayGroundTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlayGroundTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB58475339A9EBDFD439F617 /* libPods-PlayGround.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlayGround.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD8393190CC45C75F33AB066 /* libPods-PlayGround-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlayGround-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE206A4DAD3DAAE2BDB192D5 /* Pods-PlayGroundTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGroundTests.release.xcconfig"; path = "Target Support Files/Pods-PlayGroundTests/Pods-PlayGroundTests.release.xcconfig"; sourceTree = "<group>"; };
+		DCADC869C388410D8A94E0F2 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		E74D3480E344531605A32409 /* libPods-PlayGround-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlayGround-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E800E92EF28FF5039534D2D5 /* Pods-PlayGround-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGround-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-PlayGround-tvOS/Pods-PlayGround-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		612C1543B18644D780E5928F /* antfill.ttf */ = {isa = PBXFileReference; name = "antfill.ttf"; path = "../node_modules/@ant-design/icons-react-native/fonts/antfill.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		56E43CBB7BBD432DBD3C34E2 /* antoutline.ttf */ = {isa = PBXFileReference; name = "antoutline.ttf"; path = "../node_modules/@ant-design/icons-react-native/fonts/antoutline.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F90FE013DE9446859450C557 /* Pods-PlayGroundTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGroundTests.debug.xcconfig"; path = "Target Support Files/Pods-PlayGroundTests/Pods-PlayGroundTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FFCFE15A7DA615D3C0A1A155 /* Pods-PlayGround-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGround-tvOS.release.xcconfig"; path = "Target Support Files/Pods-PlayGround-tvOS/Pods-PlayGround-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA3F016D042F6343AEC4911B /* libPods-PlayGroundTests.a in Frameworks */,
+				1B310D9BE36587A56BFFF2CE /* libPods-PlayGroundTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FA5FCF0D0AE2B776E45B07F /* libPods-PlayGround.a in Frameworks */,
+				069BC41818AD79082B38B27A /* libPods-PlayGround.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F0175C9EBA00E7F028BB544 /* libPods-PlayGround-tvOS.a in Frameworks */,
+				043E14EEAF557BCABEC1B6B0 /* libPods-PlayGround-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,13 +102,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4BC519CD6F927FE1C13E78E /* libPods-PlayGround-tvOSTests.a in Frameworks */,
+				1CF0C9C9D105FCC7AA98766C /* libPods-PlayGround-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		007CBA05A4ED4995881F5320 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				612C1543B18644D780E5928F /* antfill.ttf */,
+				56E43CBB7BBD432DBD3C34E2 /* antoutline.ttf */,
+				DCADC869C388410D8A94E0F2 /* Ionicons.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		00E356EF1AD99517003FC87E /* PlayGroundTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,12 +156,28 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				15E8181778B107492B627EEE /* libPods-PlayGround.a */,
-				3A7D7A9B53F0FD1E40BDB14B /* libPods-PlayGround-tvOS.a */,
-				94CC6FF01AEBFD189281CC44 /* libPods-PlayGround-tvOSTests.a */,
-				CD57A24C4F9795225ADA627B /* libPods-PlayGroundTests.a */,
+				BB58475339A9EBDFD439F617 /* libPods-PlayGround.a */,
+				E74D3480E344531605A32409 /* libPods-PlayGround-tvOS.a */,
+				BD8393190CC45C75F33AB066 /* libPods-PlayGround-tvOSTests.a */,
+				AE2E8A7891895732544B9A19 /* libPods-PlayGroundTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		458A0E51E5D04015AA61AE48 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A14F51DE11D9E03628AE30F3 /* Pods-PlayGround.debug.xcconfig */,
+				A8EBA0B7BDDF629D3F596FE0 /* Pods-PlayGround.release.xcconfig */,
+				E800E92EF28FF5039534D2D5 /* Pods-PlayGround-tvOS.debug.xcconfig */,
+				FFCFE15A7DA615D3C0A1A155 /* Pods-PlayGround-tvOS.release.xcconfig */,
+				14350AB9905CF90BBF4AB8AD /* Pods-PlayGround-tvOSTests.debug.xcconfig */,
+				880EC9336C46271C5E6A820F /* Pods-PlayGround-tvOSTests.release.xcconfig */,
+				F90FE013DE9446859450C557 /* Pods-PlayGroundTests.debug.xcconfig */,
+				CE206A4DAD3DAAE2BDB192D5 /* Pods-PlayGroundTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -167,8 +195,8 @@
 				00E356EF1AD99517003FC87E /* PlayGroundTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				FB0054E7E9D027FFDD66FA1F /* Pods */,
 				007CBA05A4ED4995881F5320 /* Resources */,
+				458A0E51E5D04015AA61AE48 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -186,32 +214,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FB0054E7E9D027FFDD66FA1F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6B48720152E25E0D079A5287 /* Pods-PlayGround.debug.xcconfig */,
-				94D4C92152B88455ED7D21E6 /* Pods-PlayGround.release.xcconfig */,
-				2282891FF4F1C7C00B05B6EB /* Pods-PlayGround-tvOS.debug.xcconfig */,
-				28540C27B791DA78963A1449 /* Pods-PlayGround-tvOS.release.xcconfig */,
-				E66A87CB602266ED31A4F6CA /* Pods-PlayGround-tvOSTests.debug.xcconfig */,
-				2E1EF8E5D60DCC88653E8E6F /* Pods-PlayGround-tvOSTests.release.xcconfig */,
-				4E54CDD803E582C8A84A2653 /* Pods-PlayGroundTests.debug.xcconfig */,
-				5A1EB08F50A6D0DA7A44CE18 /* Pods-PlayGroundTests.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		007CBA05A4ED4995881F5320 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				612C1543B18644D780E5928F /* antfill.ttf */,
-				56E43CBB7BBD432DBD3C34E2 /* antoutline.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -219,7 +221,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "PlayGroundTests" */;
 			buildPhases = (
-				A137C92419204C05C6D4B246 /* [CP] Check Pods Manifest.lock */,
+				9CF4C46212AD0650B48B2686 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
@@ -238,12 +240,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "PlayGround" */;
 			buildPhases = (
-				18646BE533F976F206573E0F /* [CP] Check Pods Manifest.lock */,
+				FBFC7E2E7A1E82A9EF6B3C60 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				1E3C57FF6BD01843D1B46984 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -258,7 +261,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "PlayGround-tvOS" */;
 			buildPhases = (
-				AF81954C3618940B1D79688B /* [CP] Check Pods Manifest.lock */,
+				4A2CD65D692D7DBC274417B9 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -278,7 +281,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "PlayGround-tvOSTests" */;
 			buildPhases = (
-				5D6B11661C992F826D24F31B /* [CP] Check Pods Manifest.lock */,
+				BB8ECE17116E0869A9A745D8 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -389,26 +392,52 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		18646BE533F976F206573E0F /* [CP] Check Pods Manifest.lock */ = {
+		1E3C57FF6BD01843D1B46984 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
+				"${PODS_ROOT}/Target Support Files/Pods-PlayGround/Pods-PlayGround-resources.sh",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
 			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PlayGround-checkManifestLockResult.txt",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Brands.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Regular.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Solid.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Fontisto.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Foundation.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Ionicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCommunityIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlayGround/Pods-PlayGround-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
@@ -425,7 +454,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		5D6B11661C992F826D24F31B /* [CP] Check Pods Manifest.lock */ = {
+		4A2CD65D692D7DBC274417B9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -440,14 +469,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PlayGround-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-PlayGround-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A137C92419204C05C6D4B246 /* [CP] Check Pods Manifest.lock */ = {
+		9CF4C46212AD0650B48B2686 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -469,7 +498,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AF81954C3618940B1D79688B /* [CP] Check Pods Manifest.lock */ = {
+		BB8ECE17116E0869A9A745D8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -484,7 +513,29 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PlayGround-tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-PlayGround-tvOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBFC7E2E7A1E82A9EF6B3C60 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlayGround-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -596,7 +647,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E54CDD803E582C8A84A2653 /* Pods-PlayGroundTests.debug.xcconfig */;
+			baseConfigurationReference = F90FE013DE9446859450C557 /* Pods-PlayGroundTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -619,7 +670,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A1EB08F50A6D0DA7A44CE18 /* Pods-PlayGroundTests.release.xcconfig */;
+			baseConfigurationReference = CE206A4DAD3DAAE2BDB192D5 /* Pods-PlayGroundTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -639,7 +690,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B48720152E25E0D079A5287 /* Pods-PlayGround.debug.xcconfig */;
+			baseConfigurationReference = A14F51DE11D9E03628AE30F3 /* Pods-PlayGround.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -659,7 +710,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94D4C92152B88455ED7D21E6 /* Pods-PlayGround.release.xcconfig */;
+			baseConfigurationReference = A8EBA0B7BDDF629D3F596FE0 /* Pods-PlayGround.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -678,7 +729,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2282891FF4F1C7C00B05B6EB /* Pods-PlayGround-tvOS.debug.xcconfig */;
+			baseConfigurationReference = E800E92EF28FF5039534D2D5 /* Pods-PlayGround-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -706,7 +757,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 28540C27B791DA78963A1449 /* Pods-PlayGround-tvOS.release.xcconfig */;
+			baseConfigurationReference = FFCFE15A7DA615D3C0A1A155 /* Pods-PlayGround-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -734,7 +785,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E66A87CB602266ED31A4F6CA /* Pods-PlayGround-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 14350AB9905CF90BBF4AB8AD /* Pods-PlayGround-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -761,7 +812,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E1EF8E5D60DCC88653E8E6F /* Pods-PlayGround-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 880EC9336C46271C5E6A820F /* Pods-PlayGround-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;

@@ -40,6 +40,8 @@ target 'PlayGround' do
 
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
+
+
   target 'PlayGroundTests' do
     inherit! :search_paths
     # Pods for testing
