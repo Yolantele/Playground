@@ -1,5 +1,7 @@
 # Native app
 
+## Instructions
+
 ### Prerequisites
 
 - xCode and Simulator
@@ -16,13 +18,13 @@
 3. Run the app on ios :
    `yarn run s`
 
-### Resolving Pod Build errors:
+### Resolving Pod Build errors
 
-0. link missing modules that did not link to ios or android build files:
+1. link missing modules that did not link to ios or android build files:
    `react-native link @any-missing-module`
 
-1. remove old ios/Podfile and install
-   `pod clean && pod install`
+2. remove old ios/Podfile and install
+   `pod clean` and `pod install`
 
-1. remoce old node modules and install:
+3. remove old node modules and install:
    `rm -rf node_modules/ && yarn install`
