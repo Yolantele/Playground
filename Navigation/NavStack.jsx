@@ -1,51 +1,76 @@
 import { Home } from '../Screens/Home'
 import { Profile } from '../Screens/Profile'
+import { Checkin } from '../Screens/Checkin'
 import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
 import { createBottomTabNavigator } from 'react-navigation-tabs'
+import { IconFill, IconOutline } from '@ant-design/icons-react-native'
+import React from 'react'
+import { backgroundColor } from '../customTheme'
 
-const HomeStack = createStackNavigator({
-  Home
-  // Details: DetailsScreen,
-})
+const customisedLook = {
+  headerMode: 'screen',
+  cardStyle: { backgroundColor: backgroundColor },
+  mode: 'card'
+}
+const HomeStack = createStackNavigator(
+  {
+    Home,
+    Checkin
+  },
+  customisedLook
+)
 
-const ProfileStack = createStackNavigator({
-  Profile
-  // Details: DetailsScreen,
-  // Other: OtheerScreen,
-})
+const ProfileStack = createStackNavigator(
+  {
+    Profile
+    // Details: DetailsScreen,
+    // Other: OtheerScreen,
+  },
+  customisedLook
+)
+const CheckinStack = createStackNavigator(
+  {
+    Checkin
+    // Details: DetailsScreen,
+    // Other: OtheerScreen,
+  },
+  customisedLook
+)
 
 const NavStack = createAppContainer(
   createBottomTabNavigator(
     {
       Home: HomeStack,
-      Profile: ProfileStack
-    }
+      Profile: ProfileStack,
+      Checkin: CheckinStack
+    },
     //other config for tab navigator
-    // {
-    //   defaultNavigationOptions: ({ navigation }) => ({
-    //     tabBarIcon: ({ focused, horizontal, tintColor }) => {
-    //       const { routeName } = navigation.state;
-    //       let IconComponent = Ionicons;
-    //       let iconName;
-    //       if (routeName === 'Home') {
-    //         iconName = `ios-information-circle${focused ? '' : '-outline'}`;
-    //         // Sometimes we want to add badges to some icons.
-    //         // You can check the implementation below.
-    //         IconComponent = HomeIconWithBadge;
-    //       } else if (routeName === 'Settings') {
-    //         iconName = `ios-options`;
-    //       }
+    {
+      defaultNavigationOptions: ({ navigation }) => ({
+        tabBarIcon: ({ focused, horizontal, tintColor }) => {
+          const { routeName } = navigation.state
+          let iconName
+          if (routeName === 'Home') iconName = `home`
+          if (routeName === 'Profile') iconName = `user`
+          if (routeName === 'Checkin') iconName = `audio`
 
-    //       // You can return any component that you like here!
-    //       return <IconComponent name={iconName} size={25} color={tintColor} />;
-    //     },
-    //   }),
-    //   tabBarOptions: {
-    //     activeTintColor: 'tomato',
-    //     inactiveTintColor: 'gray',
-    //   },
-    // }
+          return (
+            <>
+              {focused ? (
+                <IconFill name={iconName} size={30} color={tintColor} />
+              ) : (
+                <IconFill name={iconName} size={25} color={tintColor} />
+              )}
+            </>
+          )
+        }
+      }),
+      tabBarOptions: {
+        activeTintColor: 'tomato',
+        inactiveTintColor: 'gray'
+      }
+    }
   )
 )
 
