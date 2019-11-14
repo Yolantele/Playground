@@ -2,17 +2,16 @@ import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
   container: {
-    display: 'flex',
     flex: 1,
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: '#fff',
-    margin: 20
+    width: '100%'
   },
   quotes: {
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    margin: '10%'
   }
 })
 
