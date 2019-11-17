@@ -1,10 +1,13 @@
 export const primaryColour = '#FF6767'
 export const primaryColourTap = '#C97698'
+export const secondaryColour = '#C97698'
+export const specialTextColour = '#c9ffe8'
 export const bodyColour = '#ffefeb'
 export const textColour = '#3a353b'
 export const backgroundColor = '#ffcec2'
 export const fontSizeBase = 14
 export const radiusBase = 20
+export const lineHeight = 20
 export const brandShadow = {
   shadowOffset: { width: 1, height: 1 },
   shadowColor: 'grey',
@@ -14,7 +17,7 @@ export const brandShadow = {
 
 export const brandGlow = {
   shadowColor: primaryColour,
-  shadowOpacity: 0.4,
+  shadowOpacity: 0.5,
   shadowRadius: 7
 }
 export const customTheme = {
