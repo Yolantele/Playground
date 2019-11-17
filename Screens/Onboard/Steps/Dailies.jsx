@@ -17,28 +17,29 @@ const Dailies = ({ setDailies, resetDailies, setValue, value, dailies, next }) =
         Each completed DAILY earns 2 Glos a day
       </TheText>
       <WhiteSpace size="lg" />
-      {
-        <InputItem
-          maxLength={INPUT_MAX}
-          clear
-          value={value}
-          onChange={val => setValue(val)}
-          placeholder={
-            dailies.length === MAX_DAILIES
-              ? `The max of ${MAX_DAILIES} DAILIES added!`
-              : 'Add your own DALIES here...'
-          }
-          extra={
-            <Button
-              onPress={() => setDailies(value)}
-              disabled={dailies.length === MAX_DAILIES || value === ''}>
-              <TheText bold color={secondaryColour} onPress={() => setDailies(value)}>
-                Add
-              </TheText>
-            </Button>
-          }
-        />
-      }
+
+      <TheText centered>Type in any DAILY items:</TheText>
+      <InputItem
+        maxLength={INPUT_MAX}
+        clear
+        value={value}
+        onChange={val => setValue(val)}
+        placeholder={
+          dailies.length === MAX_DAILIES
+            ? `The max of ${MAX_DAILIES} DAILIES added!`
+            : 'Add your own DALIES here...'
+        }
+        extra={
+          <Button
+            onPress={() => setDailies(value)}
+            disabled={dailies.length === MAX_DAILIES || value === ''}>
+            <TheText bold color={secondaryColour} onPress={() => setDailies(value)}>
+              Add
+            </TheText>
+          </Button>
+        }
+      />
+
       <WhiteSpace size="lg" />
       {dailies.length ? (
         <View style={styles.card}>
@@ -69,17 +70,20 @@ const Dailies = ({ setDailies, resetDailies, setValue, value, dailies, next }) =
       ) : null}
       <WhiteSpace size="xl" />
       {dailies.length < MAX_DAILIES ? (
-        DAILIES.map((dailie, i) => (
-          <Button
-            onPress={() => onChooseDailies(dailie)}
-            style={styles.buttonStyle}
-            key={i}
-            disabled={dailies.includes(dailie)}>
-            <TheText bold color={secondaryColour} onPress={() => onChooseDailies(dailie)}>
-              {dailie}
-            </TheText>
-          </Button>
-        ))
+        <>
+          <TheText centered>Or add any examples bellow</TheText>
+          {DAILIES.map((dailie, i) => (
+            <Button
+              onPress={() => onChooseDailies(dailie)}
+              style={styles.buttonStyle}
+              key={i}
+              disabled={dailies.includes(dailie)}>
+              <TheText bold color={secondaryColour} onPress={() => onChooseDailies(dailie)}>
+                {dailie}
+              </TheText>
+            </Button>
+          ))}
+        </>
       ) : (
         <>
           <TheText xl bold centered color={specialTextColour}>

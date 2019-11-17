@@ -7,23 +7,27 @@ export const BASE = [
   'No added Sugar 🍩',
   'Veg with each Meal 🥦',
   'Drink 2l of Water 💦',
-  'Organic Food 🥗',
-  'Deep Breathing 💨'
+  'Organic Foods 🥗',
+  'Deep Breathing 💨',
+  'Swap Coffees for Tea 🍵'
 ]
 export const DAILIES = [
   'Complete a Workout 🤸🏻‍♀️',
   'Meditate 🧘🏾‍♂️',
   'Have a Suprefood Drink 💚',
   'Take Vitamins 💊',
-  'Take 10 000 Steps 👟'
+  'Take 10 000 Steps 👟',
+  'Daily Gratitudes 🙏'
 ]
 export const BONUS = [
   'Face Toning Massage 💁‍♀️',
   'Body Exfoliation 👯‍♂️',
   'Sauna Treatment 🧖‍♀️',
-  'Foam Rolling ',
+  'Foam Rolling',
   'Journaling ✏️',
-  '1h Dedicated self-care ️'
+  'Dedicated Self-care Time 💅',
+  'Long Meditation sitting',
+  'Deep-clean'
 ]
 
 export const RULES = [
@@ -32,7 +36,7 @@ export const RULES = [
     text: 'the makeup of each day for the length of your Glo Sprint'
   },
   { head: '2 - DALIES ⏰', text: 'complete the tasks once a day' },
-  { head: '3 - BONUS 🔥', text: 'complete a set number of tasks at least once a week' }
+  { head: '3 - WEEK BONUS 🔥', text: 'complete a set number of tasks at least once a week' }
 ]
 
 export const SPRINT_TYPE = [

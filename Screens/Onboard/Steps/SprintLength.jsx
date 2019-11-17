@@ -14,7 +14,7 @@ const SprintLength = ({ setLength }) => (
     </TheText>
     <WhiteSpace size="lg" />
     {SPRINT_LENGTH.map((sprint, i) => (
-      <Button style={styles.buttonStyle} key={i}>
+      <Button style={styles.buttonStyle} key={i} onPress={() => setLength(sprint)}>
         <TheText bold large color={secondaryColour} onPress={() => setLength(sprint)}>
           {sprint.button}
         </TheText>

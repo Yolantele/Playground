@@ -15,7 +15,7 @@ const Intro = ({ next, goHome }) => (
         Lets set one unique to You 👏
       </TheText>
     </TheCard>
-    <Button style={{ ...styles.buttonStyle, margin: 10 }}>
+    <Button style={{ ...styles.buttonStyle, margin: 10 }} onPress={next}>
       <TheText bold xl color={secondaryColour} onPress={next}>
         Let's Glo! 🤸🏻‍
       </TheText>

@@ -13,7 +13,7 @@ const SprintType = ({ setType }) => (
         <TheText xl bold color={secondaryColour}>
           {option.text}
         </TheText>
-        <Button style={{ ...styles.buttonStyle, margin: 10 }}>
+        <Button style={{ ...styles.buttonStyle, margin: 10 }} onPress={() => setType(option.val)}>
           <TheText bold xl color={secondaryColour} onPress={() => setType(option.val)}>
             {option.button}
           </TheText>

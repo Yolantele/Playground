@@ -19,28 +19,27 @@ const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
         Each completed BONUS earns 2 glos
       </TheText>
       <WhiteSpace size="lg" />
-      {
-        <InputItem
-          clear
-          maxLength={INPUT_MAX}
-          value={value}
-          onChange={val => setValue(val)}
-          placeholder={
-            bonuses.length === MAX_BONUS
-              ? `You have added the max ${MAX_BONUS} BONUSES`
-              : 'Add your own BONUS here...'
-          }
-          extra={
-            <Button
-              onPress={() => setBonus(value)}
-              disabled={bonuses.lenght === MAX_BONUS || value === ''}>
-              <TheText bold color={secondaryColour} onPress={() => setBonus(value)}>
-                Add
-              </TheText>
-            </Button>
-          }
-        />
-      }
+      <TheText centered>Type in any Weekly BONUS items:</TheText>
+      <InputItem
+        clear
+        maxLength={INPUT_MAX}
+        value={value}
+        onChange={val => setValue(val)}
+        placeholder={
+          bonuses.length === MAX_BONUS
+            ? `You have added the max ${MAX_BONUS} BONUSES`
+            : 'Add your own BONUS here...'
+        }
+        extra={
+          <Button
+            onPress={() => setBonus(value)}
+            disabled={bonuses.lenght === MAX_BONUS || value === ''}>
+            <TheText bold color={secondaryColour} onPress={() => setBonus(value)}>
+              Add
+            </TheText>
+          </Button>
+        }
+      />
       <WhiteSpace size="lg" />
       {bonuses.length ? (
         <View style={styles.card}>
@@ -71,18 +70,21 @@ const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
       ) : null}
       <WhiteSpace size="lg" />
       {bonuses.length < MAX_BONUS ? (
-        BONUS.map((bon, i) => (
-          <Button
-            key={i}
-            style={styles.buttonStyle}
-            key={i}
-            disabled={bonuses.includes(bon)}
-            onPress={() => onChooseBonus(bon)}>
-            <TheText large bold color={secondaryColour} onPress={() => onChooseBonus(bon)}>
-              {bon}
-            </TheText>
-          </Button>
-        ))
+        <>
+          <TheText centered>Or add any Examples from bellow</TheText>
+          {BONUS.map((bon, i) => (
+            <Button
+              key={i}
+              style={styles.buttonStyle}
+              key={i}
+              disabled={bonuses.includes(bon)}
+              onPress={() => onChooseBonus(bon)}>
+              <TheText large bold color={secondaryColour} onPress={() => onChooseBonus(bon)}>
+                {bon}
+              </TheText>
+            </Button>
+          ))}
+        </>
       ) : (
         <>
           <TheText xl bold centered color={specialTextColour}>
