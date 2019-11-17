@@ -5,10 +5,16 @@ import { brandShadow } from '../customTheme'
 
 const { Body } = Card
 
-const cardStyle = { padding: 30, ...brandShadow }
+const cardStyle = {
+  ...brandShadow,
+  padding: 30,
+  paddingTop: 20,
+  minHeight: 150,
+  margin: 5
+}
 
-const TheCard = ({ children }) => (
-  <TouchableOpacity>
+const TheCard = ({ height, children }) => (
+  <TouchableOpacity style={{ width: '100%', height }}>
     <Card style={cardStyle}>
       <Body>{children}</Body>
     </Card>

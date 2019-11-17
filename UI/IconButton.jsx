@@ -1,5 +1,5 @@
-import { IconFill } from '@ant-design/icons-react-native'
-import { TouchableOpacity } from 'react-native'
+import { IconFill, IconOutline } from '@ant-design/icons-react-native'
+import { TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { primaryColour, brandShadow, brandGlow } from '../customTheme'
 
@@ -13,16 +13,20 @@ const iconStyle = {
 }
 const buttonStyle = {
   height: 50,
-  width: 50,
+  minWidth: 50,
   borderRadius: 25,
   backgroundColor: 'white',
-  margin: 20,
+  margin: 10,
   ...brandShadow,
   ...brandGlow
 }
-const IconButton = ({ icon = 'audio', size = 30, colour = primaryColour }) => (
+const IconButton = ({ icon = 'audio', size = 30, colour = primaryColour, filled, children }) => (
   <TouchableOpacity style={buttonStyle}>
-    <IconFill name={icon} size={size} color={colour} style={iconStyle} />
+    {filled ? (
+      <IconFill name={icon} size={size} color={colour} style={iconStyle} />
+    ) : (
+      <IconOutline name={icon} size={size} color={colour} style={iconStyle} />
+    )}
   </TouchableOpacity>
 )
 
