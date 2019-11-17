@@ -9,12 +9,13 @@ import { SPRINT_LENGTH } from '../const'
 const SprintLength = ({ setLength }) => (
   <View style={styles.section}>
     <TheText xl bold centered color={specialTextColour}>
-      Go for a quick glow-up, a noticable change, new habbit forming or a full-blown transformation
+      Looking for a quick glow-up, a noticable change, new habbit forming or a full-blown
+      transformation ?
     </TheText>
     <WhiteSpace size="lg" />
     {SPRINT_LENGTH.map((sprint, i) => (
       <Button style={styles.buttonStyle} key={i}>
-        <TheText bold color={secondaryColour} onPress={() => setLength(sprint)}>
+        <TheText bold large color={secondaryColour} onPress={() => setLength(sprint)}>
           {sprint.button}
         </TheText>
       </Button>

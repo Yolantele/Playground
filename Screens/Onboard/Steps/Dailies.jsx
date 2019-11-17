@@ -7,6 +7,7 @@ import { specialTextColour, secondaryColour } from '../../../customTheme'
 import { DAILIES, MAX_DAILIES } from '../const'
 
 const Dailies = ({ setDailies, resetDailies, setValue, value, dailies, next }) => {
+  const onChooseDailies = dailie => !dailies.includes(dailie) && setDailies(dailie)
   return (
     <View style={styles.section}>
       <TheText xl bold centered color={specialTextColour}>
@@ -23,8 +24,8 @@ const Dailies = ({ setDailies, resetDailies, setValue, value, dailies, next }) =
           onChange={val => setValue(val)}
           placeholder={
             dailies.length === MAX_DAILIES
-              ? `You have added the maximum of ${MAX_DAILIES} dailies 😊`
-              : 'Add your DALIES here...'
+              ? `Max of ${MAX_DAILIES} DAILIES 😊`
+              : 'Add your own DALIES here...'
           }
           extra={
             <Button
@@ -41,9 +42,13 @@ const Dailies = ({ setDailies, resetDailies, setValue, value, dailies, next }) =
       {dailies.length ? (
         <View style={styles.card}>
           <TheCard>
+            <TheText bold large color={secondaryColour}>
+              Once a day:
+            </TheText>
+            <WhiteSpace />
             {dailies.map((each, i) => (
-              <View style={styles.rowButton}>
-                <TheText key={i} bold large centered color={secondaryColour}>
+              <View style={styles.rowButton} key={i}>
+                <TheText bold large centered color={secondaryColour}>
                   {i + 1} - {each}
                 </TheText>
                 <Button
@@ -61,15 +66,16 @@ const Dailies = ({ setDailies, resetDailies, setValue, value, dailies, next }) =
           </TheCard>
         </View>
       ) : null}
-      <WhiteSpace size="lg" />
+      <WhiteSpace size="xl" />
       {dailies.length < MAX_DAILIES ? (
-        DAILIES.map((dalie, i) => (
-          <Button style={styles.buttonStyle} key={i} disabled={dailies.includes(dalie)}>
-            <TheText
-              bold
-              color={secondaryColour}
-              onPress={() => !dailies.includes(dalie) && setDailies(dalie)}>
-              {dalie}
+        DAILIES.map((dailie, i) => (
+          <Button
+            onPress={() => onChooseDailies(dailie)}
+            style={styles.buttonStyle}
+            key={i}
+            disabled={dailies.includes(dailie)}>
+            <TheText bold color={secondaryColour} onPress={() => onChooseDailies(dailie)}>
+              {dailie}
             </TheText>
           </Button>
         ))
@@ -81,7 +87,7 @@ const Dailies = ({ setDailies, resetDailies, setValue, value, dailies, next }) =
           <TheText large bold centered color={specialTextColour}>
             Next on , let's set any BONUS 💥 you want to complete at least once a week!
           </TheText>
-          <WhiteSpace sixe="lg" />
+          <WhiteSpace size="xl" />
           <Button onPress={next}>
             <TheText bold color={secondaryColour} onPress={next}>
               Set BONUS >

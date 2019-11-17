@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { ScrollView, View, ImageBackground, TextInput } from 'react-native'
+import { ScrollView, View, ImageBackground } from 'react-native'
 import { TheText } from '../../UI'
 import styles from './OnboardStyle'
 import { Button } from '@ant-design/react-native'
@@ -10,7 +10,7 @@ import { MAX_BASE, MAX_DAILIES, MAX_BONUS } from './const'
 import { Base, Rules, SprintLength, SprintType, Dailies, Bonuses, Intro } from './Steps'
 
 const Onboard = ({ navigation }) => {
-  const [step, setStep] = useState(5)
+  const [step, setStep] = useState(0)
   const [value, setValue] = useState('')
   const [journey, setJourney] = useState({
     sprintType: '',
@@ -83,10 +83,10 @@ const Onboard = ({ navigation }) => {
       header: 'Customise Your Sprint in 3 steps and collect Glo points!',
       content: <Rules next={() => setStep(step + 1)} />,
       icon: 'experiment',
-      image: ONBOARD
+      image: ONBOARD_3
     },
     {
-      header: '1 BASE',
+      header: '1 - BASE',
       content: (
         <Base
           setBaseItems={setBaseItems}
@@ -98,10 +98,10 @@ const Onboard = ({ navigation }) => {
         />
       ),
       icon: 'home',
-      image: ONBOARD_2
+      image: ONBOARD
     },
     {
-      header: '2 DALIES',
+      header: '2 - DAILIES',
       content: (
         <Dailies
           setDailies={setDailies}
@@ -116,45 +116,24 @@ const Onboard = ({ navigation }) => {
       image: ONBOARD
     },
     {
-      header: '3 BONUS',
+      header: '3 - BONUS',
       icon: 'trophy',
-      image: ONBOARD_3,
+      image: ONBOARD,
       content: (
         <Bonuses
           next={() => setStep(step + 1)}
           resetBonus={newSet => reSetBonus(newSet)}
           setBonus={setBonusItems}
           bonuses={journey.bonus}
+          setValue={setValue}
+          value={value}
         />
       )
-      // (
-      //   <View style={styles.section}>
-      //     <TheText xl bold centered color={specialTextColour}>
-      //       Complete each BONUS task at least once a week!
-      //     </TheText>
-      //     <TheText large centered color={specialTextColour}>
-      //       Each completed BONUS earns 2 glos
-      //     </TheText>
-      //     {BONUS.map((bonus, i) => (
-      //       <Button key={i} style={{ margin: 5, ...brandShadow, ...brandGlow }} key={i}>
-      //         <TheText
-      //           bold
-      //           color={secondaryColour}
-      //           onPress={() => {
-      //             setStep(step + 1)
-      //             setJourney({ ...journey, bonus })
-      //           }}>
-      //           {bonus}
-      //         </TheText>
-      //       </Button>
-      //     ))}
-      //   </View>
-      // )
     },
     {
-      header: 'All set! You are ready to start your Sprint!',
+      header: 'Your Sprint and Glo points',
       icon: 'eye',
-      image: ONBOARD_2,
+      image: ONBOARD_3,
       content: (
         <View style={styles.section}>
           <TheText xl bold centered color={specialTextColour}>
@@ -175,7 +154,7 @@ const Onboard = ({ navigation }) => {
   const { header, icon, content, image } = steps[step]
   return (
     <ImageBackground source={image} style={backImage}>
-      <ScrollView style={container} showsHorizontalScrollIndicator={false}>
+      <ScrollView style={container} showsHorizontalScrollIndicator={false} snapToStart={true}>
         <View style={view}>
           <TheText bold xxl color={'white'} centered>
             {header}

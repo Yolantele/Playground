@@ -1,6 +1,6 @@
 export const MAX_BASE = 3
 export const MAX_DAILIES = 3
-export const MAX_BONUS = 4
+export const MAX_BONUS = 5
 
 export const BASE = [
   'No added Sugar 🍩',
@@ -12,16 +12,17 @@ export const BASE = [
 export const DAILIES = [
   'Complete a Workout 🤸🏻‍♀️',
   'Meditate 🧘🏾‍♂️',
-  'Have a Suprefood Drink ',
-  'Take Vitamins',
-  'Complete 10 000 Steps'
+  'Have a Suprefood Drink 💚',
+  'Take Vitamins 💊',
+  'Take 10 000 Steps 👟'
 ]
 export const BONUS = [
   'Face Toning Massage 💁‍♀️',
   'Body Exfoliation 👯‍♂️',
   'Sauna Treatment 🧖‍♀️',
   'Foam Rolling ',
-  'Journaling ✏️'
+  'Journaling ✏️',
+  '1h Dedicated self-care ️'
 ]
 
 export const RULES = [
@@ -35,7 +36,7 @@ export const RULES = [
 
 export const SPRINT_TYPE = [
   { text: 'Power from within!', button: 'Glo Solo 🤸🏻‍', val: 'solo' },
-  { text: 'Power in numbers!', button: 'Glo Tribe 💥', val: 'tribe' }
+  { text: 'Power in numbers!', button: 'Glo Tribe 👯‍', val: 'tribe' }
 ]
 
 export const SPRINT_LENGTH = [

@@ -19,7 +19,7 @@ const Rules = ({ next }) => (
       </View>
     ))}
     <Button style={styles.buttonStyle} onPress={next}>
-      <TheText bold color={secondaryColour} onPress={next}>
+      <TheText large bold color={secondaryColour} onPress={next}>
         Set Base >
       </TheText>
     </Button>

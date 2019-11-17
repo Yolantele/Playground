@@ -9,11 +9,14 @@ const Intro = ({ next, goHome }) => (
   <View style={styles.section}>
     <TheCard>
       <TheText bold xl centered color={secondaryColour}>
-        We're happy to see you here and start the Glo Sprint. Lets set it unique to You!
+        We're happy to see you start Your Own Glo Sprint ! ☺️
+      </TheText>
+      <TheText bold large centered color={secondaryColour}>
+        Lets set one unique to You 👏
       </TheText>
     </TheCard>
     <Button style={{ ...styles.buttonStyle, margin: 10 }}>
-      <TheText bold color={secondaryColour} onPress={next}>
+      <TheText bold xl color={secondaryColour} onPress={next}>
         Let's Glo! 🤸🏻‍
       </TheText>
     </Button>

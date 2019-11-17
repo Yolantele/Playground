@@ -22,14 +22,14 @@ const Base = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => 
           value={value}
           onChange={val => setValue(val)}
           placeholder={
-            base.lenght === MAX_BASE
-              ? `You have added the maximum of ${MAX_BASE} items`
-              : 'Add your BASE items here...'
+            base.length === MAX_BASE
+              ? `You have added the max ${MAX_BASE} BASE items`
+              : 'Add your own BASE items here...'
           }
           extra={
             <Button
               onPress={() => setBaseItems(value)}
-              disabled={base.lenght === MAX_BASE || value === ''}>
+              disabled={base.length === MAX_BASE || value === ''}>
               <TheText bold color={secondaryColour} onPress={() => setBaseItems(value)}>
                 Add
               </TheText>
@@ -42,9 +42,13 @@ const Base = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => 
       {base && base.length ? (
         <View style={styles.card}>
           <TheCard>
+            <TheText bold large color={secondaryColour}>
+              Throughout the day:
+            </TheText>
+            <WhiteSpace />
             {base.map((each, i) => (
-              <View style={styles.rowButton}>
-                <TheText key={i} bold large centered color={secondaryColour}>
+              <View style={styles.rowButton} key={i}>
+                <TheText bold large centered color={secondaryColour}>
                   {i + 1} - {each}
                 </TheText>
                 <Button
@@ -68,6 +72,7 @@ const Base = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => 
           <Button style={styles.buttonStyle} key={i} disabled={base.includes(each)}>
             <TheText
               bold
+              large
               color={secondaryColour}
               onPress={() => !base.includes(each) && setBaseItems(each)}>
               {each}
@@ -82,9 +87,9 @@ const Base = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => 
           <TheText large bold centered color={specialTextColour}>
             Next, let's set the tasks you want to complete once a day 🙌
           </TheText>
-          <WhiteSpace sixe="lg" />
+          <WhiteSpace sixe="xl" />
           <Button onPress={next}>
-            <TheText bold color={secondaryColour} onPress={next}>
+            <TheText large bold color={secondaryColour} onPress={next}>
               Set DAILIES >
             </TheText>
           </Button>
