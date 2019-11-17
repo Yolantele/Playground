@@ -1,10 +1,10 @@
 import React from 'react'
 import { View } from 'react-native'
-import { TheText, TheCard } from '../../../UI'
+import { TheText, TheCard, OneLineInput } from '../../../UI'
 import styles from '../OnboardStyle'
-import { Button, WhiteSpace, InputItem } from '@ant-design/react-native'
+import { Button, WhiteSpace } from '@ant-design/react-native'
 import { specialTextColour, secondaryColour } from '../../../customTheme'
-import { BONUS, MAX_BONUS, INPUT_MAX } from '../const'
+import { BONUS, MAX_BONUS } from '../const'
 
 const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
   const onChooseBonus = bon => {
@@ -15,33 +15,22 @@ const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
       <TheText xl bold centered color={specialTextColour}>
         Complete each BONUS task at least once a week!
       </TheText>
-      <TheText large centered color={specialTextColour}>
-        Each completed BONUS earns 2 glos
+      <TheText large bold centered color={specialTextColour}>
+        Earns 2 glo points each
       </TheText>
-      <WhiteSpace size="lg" />
-      <TheText centered>Type in any Weekly BONUS items:</TheText>
-      <InputItem
-        style={{ margin: 10, marginTop: 20 }}
-        clear
-        maxLength={INPUT_MAX}
-        value={value}
+      <OneLineInput
+        head="Type in Weekly BONUS items:"
+        action={() => setBonus(value)}
         onChange={val => setValue(val)}
+        disabled={bonuses.lenght === MAX_BONUS || value === ''}
+        title="Add"
+        value={value}
         placeholder={
           bonuses.length === MAX_BONUS
             ? `You have added the max ${MAX_BONUS} BONUSES`
             : 'Add your own BONUS here...'
         }
-        extra={
-          <Button
-            onPress={() => setBonus(value)}
-            disabled={bonuses.lenght === MAX_BONUS || value === ''}>
-            <TheText bold color={secondaryColour} onPress={() => setBonus(value)}>
-              Add
-            </TheText>
-          </Button>
-        }
       />
-      <WhiteSpace size="lg" />
       {bonuses.length ? (
         <View style={styles.card}>
           <TheCard>
@@ -72,7 +61,7 @@ const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
       <WhiteSpace size="lg" />
       {bonuses.length < MAX_BONUS ? (
         <>
-          <TheText centered>Or add any Examples from bellow</TheText>
+          <TheText centered>Or choose any from Examples bellow:</TheText>
           {BONUS.map((bon, i) => (
             <Button
               key={i}

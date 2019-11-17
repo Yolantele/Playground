@@ -1,4 +1,3 @@
-export const INPUT_MAX = 30
 export const MAX_BASE = 3
 export const MAX_DAILIES = 3
 export const MAX_BONUS = 5

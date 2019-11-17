@@ -1,6 +1,6 @@
 import React from 'react'
 import { View } from 'react-native'
-import { TheText, TheCard } from '../../../UI'
+import { TheText, TheCard, OneLineInput } from '../../../UI'
 import styles from '../OnboardStyle'
 import { Button, WhiteSpace, InputItem } from '@ant-design/react-native'
 import { specialTextColour, secondaryColour } from '../../../customTheme'
@@ -16,32 +16,19 @@ const Dailies = ({ setDailies, resetDailies, setValue, value, dailies, next }) =
       <TheText bold large centered color={specialTextColour}>
         Each completed DAILY earns 2 Glos a day
       </TheText>
-      <WhiteSpace size="lg" />
-
-      <TheText centered>Type in any DAILY items:</TheText>
-      <InputItem
-        style={{ margin: 10, marginTop: 20 }}
-        maxLength={INPUT_MAX}
-        clear
-        value={value}
+      <OneLineInput
+        head={'Type in DAILY items:'}
+        action={() => setDailies(value)}
         onChange={val => setValue(val)}
+        disabled={dailies.length === MAX_DAILIES || value === ''}
+        title={'Add'}
+        value={value}
         placeholder={
           dailies.length === MAX_DAILIES
             ? `The max of ${MAX_DAILIES} DAILIES added!`
             : 'Add your own DALIES here...'
         }
-        extra={
-          <Button
-            onPress={() => setDailies(value)}
-            disabled={dailies.length === MAX_DAILIES || value === ''}>
-            <TheText bold color={secondaryColour} onPress={() => setDailies(value)}>
-              Add
-            </TheText>
-          </Button>
-        }
       />
-
-      <WhiteSpace size="lg" />
       {dailies.length ? (
         <View style={styles.card}>
           <TheCard>
@@ -72,7 +59,7 @@ const Dailies = ({ setDailies, resetDailies, setValue, value, dailies, next }) =
       <WhiteSpace size="xl" />
       {dailies.length < MAX_DAILIES ? (
         <>
-          <TheText centered>Or add any examples bellow</TheText>
+          <TheText centered>Or choose any from Examples bellow:</TheText>
           {DAILIES.map((dailie, i) => (
             <Button
               onPress={() => onChooseDailies(dailie)}

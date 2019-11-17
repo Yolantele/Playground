@@ -1,10 +1,10 @@
 import React from 'react'
 import { View } from 'react-native'
-import { TheText, TheCard } from '../../../UI'
+import { TheText, TheCard, OneLineInput } from '../../../UI'
 import styles from '../OnboardStyle'
-import { Button, InputItem, WhiteSpace } from '@ant-design/react-native'
+import { Button, WhiteSpace } from '@ant-design/react-native'
 import { specialTextColour, secondaryColour } from '../../../customTheme'
-import { BASE, MAX_BASE, INPUT_MAX } from '../const'
+import { BASE, MAX_BASE } from '../const'
 
 const Base = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => {
   const onChooseBase = each => !base.includes(each) && setBaseItems(each)
@@ -16,32 +16,19 @@ const Base = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => 
       <TheText large centered color={specialTextColour}>
         Each completed BASE earns 1 Glo a day! Glos double if all completed.
       </TheText>
-      <WhiteSpace size="lg" />
-      <TheText centered>Type in any BASE items :</TheText>
-      <InputItem
-        style={{ margin: 10, marginTop: 20 }}
-        clear
-        value={value}
+      <OneLineInput
+        head="Type in BASE items:"
+        action={() => setBonus(value)}
         onChange={val => setValue(val)}
-        maxLength={INPUT_MAX}
+        disabled={base.length === MAX_BASE || value === ''}
+        title="Add"
+        value={value}
         placeholder={
           base.length === MAX_BASE
             ? `You have added the max ${MAX_BASE} BASE items`
             : 'Add your own BASE items here...'
         }
-        extra={
-          <Button
-            onPress={() => setBaseItems(value)}
-            disabled={base.length === MAX_BASE || value === ''}>
-            <TheText bold color={secondaryColour} onPress={() => setBaseItems(value)}>
-              Add
-            </TheText>
-          </Button>
-        }
       />
-
-      <WhiteSpace size="lg" />
-
       {base && base.length ? (
         <View style={styles.card}>
           <TheCard>
@@ -72,7 +59,7 @@ const Base = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => 
       <WhiteSpace size="lg" />
       {base.length < MAX_BASE ? (
         <>
-          <TheText centered>Or add any examples from bellow:</TheText>
+          <TheText centered>Or choose any from Examples bellow:</TheText>
           {BASE.map((each, i) => (
             <Button
               style={styles.buttonStyle}
