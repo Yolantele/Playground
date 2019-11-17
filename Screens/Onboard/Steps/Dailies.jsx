@@ -20,6 +20,7 @@ const Dailies = ({ setDailies, resetDailies, setValue, value, dailies, next }) =
 
       <TheText centered>Type in any DAILY items:</TheText>
       <InputItem
+        style={{ margin: 10, marginTop: 20 }}
         maxLength={INPUT_MAX}
         clear
         value={value}

@@ -21,6 +21,7 @@ const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
       <WhiteSpace size="lg" />
       <TheText centered>Type in any Weekly BONUS items:</TheText>
       <InputItem
+        style={{ margin: 10, marginTop: 20 }}
         clear
         maxLength={INPUT_MAX}
         value={value}

@@ -19,6 +19,7 @@ const Base = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => 
       <WhiteSpace size="lg" />
       <TheText centered>Type in any BASE items :</TheText>
       <InputItem
+        style={{ margin: 10, marginTop: 20 }}
         clear
         value={value}
         onChange={val => setValue(val)}
