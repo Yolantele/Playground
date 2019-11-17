@@ -30,7 +30,7 @@ const SideDrawer = ({ children, items = ITEMS }) => {
         {items.map((item, index) => (
           <Item key={index}>
             <View style={drawerRowStyle}>
-              <IconOutline name="alibaba" size={30} style={{ margin: 10, color: primaryColour }} />
+              <IconOutline name="smile" size={30} style={{ margin: 10, color: primaryColour }} />
               <TheText>
                 {item} - {index}
               </TheText>

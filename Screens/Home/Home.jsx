@@ -8,15 +8,13 @@ import SideDrawer from './SideDrawer'
 
 const QUOTE_API = 'https://favqs.com/api/qotd'
 
-const { Footer } = Card
-
 const QuoteSection = ({ quote }) => (
-  <View style={{ width: '90%', flex: 1, justifyContent: 'center', alignItems: 'center', margin: '10%' }}>
-    <TheCard>
-      <TheText>{quote.body}</TheText>
+  <TheCard>
+    <View style={styles.quote}>
+      <TheText>{quote.body && quote.body.length ? quote.body : 'test text for quote body'}</TheText>
       <TheText light>{quote.author}</TheText>
-    </TheCard>
-  </View>
+    </View>
+  </TheCard>
 )
 
 const Home = ({ navigation }) => {
@@ -35,16 +33,14 @@ const Home = ({ navigation }) => {
   return (
     <SideDrawer>
       <ScrollView contentContainerStyle={container}>
-        <View style={{ width: '90%', height: 200 }}>
-          <TheCard>
-            <View style={{ height: 42 }}>
-              <TheText style={{ marginLeft: 16 }}>Card Content</TheText>
-            </View>
-            <Footer content="footer content" extra="footer extra content" />
-          </TheCard>
-        </View>
+        <TheCard>
+          <TheText>Card Content</TheText>
+        </TheCard>
+
+        <QuoteSection quote={quote} />
 
         <Button
+          style={{ margin: 10 }}
           type="primary"
           onPress={() => {
             setCounter(counter + 1)
@@ -52,8 +48,6 @@ const Home = ({ navigation }) => {
           }}>
           {`Go to Profile ${counter}`}
         </Button>
-        <WhiteSpace />
-        <QuoteSection quote={quote} />
       </ScrollView>
     </SideDrawer>
   )
