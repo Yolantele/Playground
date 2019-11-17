@@ -24,7 +24,7 @@ const SideDrawer = ({ children, items = ITEMS }) => {
       <List>
         <Item>
           <View style={drawerRowStyle}>
-            <TheText bold>GLO UP</TheText>
+            <TheText bold>Glo</TheText>
           </View>
         </Item>
         {items.map((item, index) => (

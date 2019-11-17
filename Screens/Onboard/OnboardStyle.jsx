@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { brandShadow, brandGlow } from '../../customTheme'
 
 const styles = StyleSheet.create({
   container: {
@@ -13,7 +14,15 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
-  }
+  },
+  card: { display: 'flex', justifyContent: 'center', alignItems: 'center' },
+  rowButton: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 10
+  },
+  buttonStyle: { margin: 5, ...brandShadow, ...brandGlow }
 })
 
 export default styles

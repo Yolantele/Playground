@@ -1,146 +1,101 @@
 import React, { useState, useEffect } from 'react'
-import { ScrollView, View, ImageBackground } from 'react-native'
-import { TheText, TheCard } from '../../UI'
+import { ScrollView, View, ImageBackground, TextInput } from 'react-native'
+import { TheText } from '../../UI'
 import styles from './OnboardStyle'
 import { Button } from '@ant-design/react-native'
-import { IconFill } from '@ant-design/icons-react-native'
 import { brandShadow, brandGlow, specialTextColour, secondaryColour } from '../../customTheme'
 import { ONBOARD, ONBOARD_2, ONBOARD_3 } from '../../Assets/Images'
-import { SPRINT_LENGTH, SPRINT_TYPE, BASE, DAILIES, BONUS, RULES } from './const'
-const buttonStyle = { margin: 5, ...brandShadow, ...brandGlow }
+import { IconFill } from '@ant-design/icons-react-native'
+import { MAX_BASE, MAX_DAILIES, MAX_BONUS } from './const'
+import { Base, Rules, SprintLength, SprintType, Dailies, Bonuses, Intro } from './Steps'
 
 const Onboard = ({ navigation }) => {
-  const [step, setStep] = useState(0)
-  const [journey, setJourney] = useState({ sprintType: '' })
+  const [step, setStep] = useState(5)
+  const [value, setValue] = useState('')
+  const [journey, setJourney] = useState({
+    sprintType: '',
+    sprintLength: '',
+    base: [],
+    dailies: [],
+    bonus: []
+  })
+
+  const setBaseItems = value => {
+    setJourney({ ...journey, base: [...journey.base, value] })
+    setValue('')
+    if (journey.base.length === MAX_BASE) setStep(step + 1)
+  }
+
+  const setDailies = dalie => {
+    setJourney({ ...journey, dailies: [...journey.dailies, dalie] })
+    setValue('')
+    if (journey.dailies.length === MAX_DAILIES) setStep(step + 1)
+  }
+
+  const setBonusItems = bon => {
+    setJourney({ ...journey, bonus: [...journey.bonus, bon] })
+    setValue('')
+    if (journey.bonus.length === MAX_BONUS) setStep(step + 1)
+  }
+
+  const setLength = sprint => {
+    setStep(step + 1)
+    setJourney({ ...journey, sprintLength: sprint.val })
+  }
+
+  const reSetBase = newSet => {
+    setJourney({ ...journey, base: newSet })
+  }
+
+  const reSetBonus = newSet => {
+    setJourney({ ...journey, bonus: newSet })
+  }
+
+  const reSetDalies = newSet => {
+    setJourney({ ...journey, dailies: newSet })
+  }
+
+  const setType = val => {
+    setStep(step + 1)
+    setJourney({ ...journey, sprintType: val })
+  }
 
   const steps = [
     {
-      header: 'Welcome to GLO UP!',
-      content: (
-        <View style={styles.section}>
-          <TheCard>
-            <TheText bold xl color={secondaryColour}>
-              We're happy to see you here and start the GLO UP Sprint. Lets set it unique to You!
-            </TheText>
-          </TheCard>
-          <Button style={{ ...buttonStyle, margin: 10 }}>
-            <TheText bold color={secondaryColour} onPress={() => setStep(step + 1)}>
-              Let's Go! 🤸🏻‍
-            </TheText>
-          </Button>
-          <Button
-            type="ghost"
-            onPress={() => navigate('Home')}
-            style={{ ...buttonStyle, margin: 10 }}>
-            Skip Setup
-          </Button>
-        </View>
-      ),
+      header: 'Welcome to Glo!',
+      content: <Intro next={() => setStep(step + 1)} goHome={() => navigate('Home')} />,
       icon: 'fire',
       image: ONBOARD
     },
     {
       header: 'What kind of Sprinter are you?',
-      content: (
-        <>
-          {SPRINT_TYPE.map((option, i) => (
-            <View style={{ marginTop: 20, marginBottom: 20 }} key={i}>
-              <TheText xl bold color={secondaryColour}>
-                {option.text}
-              </TheText>
-              <Button style={buttonStyle}>
-                <TheText
-                  bold
-                  color={secondaryColour}
-                  onPress={() => {
-                    setStep(step + 1)
-                    setJourney({ ...journey, sprintType: option.val })
-                  }}>
-                  {option.button}
-                </TheText>
-              </Button>
-            </View>
-          ))}
-        </>
-      ),
+      content: <SprintType setType={() => setType()} />,
       icon: 'rocket',
       image: ONBOARD_2
     },
     {
       header: 'How Long do you want to sprint for?',
-      content: (
-        <View style={styles.section}>
-          <TheText xl bold centered color={specialTextColour}>
-            Go for a quick glow-up, a noticable change, new habbit forming or a full-blown
-            transformation
-          </TheText>
-
-          {SPRINT_LENGTH.map((sprint, i) => (
-            <Button style={buttonStyle} key={i}>
-              <TheText
-                bold
-                color={secondaryColour}
-                onPress={() => {
-                  setStep(step + 1)
-                  setJourney({ ...journey, sprintLength: sprint.val })
-                }}>
-                {sprint.button}
-              </TheText>
-            </Button>
-          ))}
-        </View>
-      ),
+      content: <SprintLength setLength={sprint => setLength(sprint)} />,
       icon: 'dashboard',
       image: ONBOARD_3
     },
     {
       header: 'Customise Your Sprint in 3 steps and collect Glo points!',
-      content: (
-        <View style={styles.section}>
-          {RULES.map((each, i) => (
-            <View style={{ margin: 10 }} key={i}>
-              <TheText xl bold centered color={specialTextColour}>
-                {each.head}
-              </TheText>
-              <TheText xl bold centered color={'white'}>
-                {each.text}
-              </TheText>
-            </View>
-          ))}
-          <Button style={buttonStyle}>
-            <TheText bold color={secondaryColour} onPress={() => setStep(step + 1)}>
-              Set Base >
-            </TheText>
-          </Button>
-        </View>
-      ),
+      content: <Rules next={() => setStep(step + 1)} />,
       icon: 'experiment',
       image: ONBOARD
     },
     {
       header: '1 BASE',
       content: (
-        <View style={styles.section}>
-          <TheText xl bold centered color={specialTextColour}>
-            Set the makeup of each day for the length of your GLO UP sprint:
-          </TheText>
-          <TheText large centered color={specialTextColour}>
-            Each completed BASE earns 1 Glo a day! Glos double if all completed.
-          </TheText>
-          {BASE.map((base, i) => (
-            <Button style={buttonStyle} key={i}>
-              <TheText
-                bold
-                color={secondaryColour}
-                onPress={() => {
-                  setStep(step + 1)
-                  setJourney({ ...journey, base })
-                }}>
-                {base}
-              </TheText>
-            </Button>
-          ))}
-        </View>
+        <Base
+          setBaseItems={setBaseItems}
+          resetBaseItems={newSet => reSetBase(newSet)}
+          setValue={setValue}
+          value={value}
+          base={journey.base}
+          next={() => setStep(step + 1)}
+        />
       ),
       icon: 'home',
       image: ONBOARD_2
@@ -148,58 +103,53 @@ const Onboard = ({ navigation }) => {
     {
       header: '2 DALIES',
       content: (
-        <View style={styles.section}>
-          <TheText xl bold centered color={specialTextColour}>
-            Complete each DAILY task once a day!
-          </TheText>
-          <TheText large centered color={specialTextColour}>
-            Each completed DAILY earns 2 Glos a day
-          </TheText>
-          {DAILIES.map((dalies, i) => (
-            <Button style={buttonStyle} key={i}>
-              <TheText
-                bold
-                color={secondaryColour}
-                onPress={() => {
-                  setStep(step + 1)
-                  setJourney({ ...journey, dalies })
-                }}>
-                {dalies}
-              </TheText>
-            </Button>
-          ))}
-        </View>
+        <Dailies
+          setDailies={setDailies}
+          resetDailies={newSet => reSetDalies(newSet)}
+          setValue={setValue}
+          value={value}
+          dailies={journey.dailies}
+          next={() => setStep(step + 1)}
+        />
       ),
       icon: 'rest',
-      image: ONBOARD_3
+      image: ONBOARD
     },
     {
       header: '3 BONUS',
       icon: 'trophy',
-      image: ONBOARD,
+      image: ONBOARD_3,
       content: (
-        <View style={styles.section}>
-          <TheText xl bold centered color={specialTextColour}>
-            Complete each BONUS task at least once a week!
-          </TheText>
-          <TheText large centered color={specialTextColour}>
-            Each completed BONUS earns 2 glos
-          </TheText>
-          {BONUS.map((bonus, i) => (
-            <Button key={i} style={{ margin: 5, ...brandShadow, ...brandGlow }} key={i}>
-              <TheText
-                bold
-                color={secondaryColour}
-                onPress={() => {
-                  setStep(step + 1)
-                  setJourney({ ...journey, bonus })
-                }}>
-                {bonus}
-              </TheText>
-            </Button>
-          ))}
-        </View>
+        <Bonuses
+          next={() => setStep(step + 1)}
+          resetBonus={newSet => reSetBonus(newSet)}
+          setBonus={setBonusItems}
+          bonuses={journey.bonus}
+        />
       )
+      // (
+      //   <View style={styles.section}>
+      //     <TheText xl bold centered color={specialTextColour}>
+      //       Complete each BONUS task at least once a week!
+      //     </TheText>
+      //     <TheText large centered color={specialTextColour}>
+      //       Each completed BONUS earns 2 glos
+      //     </TheText>
+      //     {BONUS.map((bonus, i) => (
+      //       <Button key={i} style={{ margin: 5, ...brandShadow, ...brandGlow }} key={i}>
+      //         <TheText
+      //           bold
+      //           color={secondaryColour}
+      //           onPress={() => {
+      //             setStep(step + 1)
+      //             setJourney({ ...journey, bonus })
+      //           }}>
+      //           {bonus}
+      //         </TheText>
+      //       </Button>
+      //     ))}
+      //   </View>
+      // )
     },
     {
       header: 'All set! You are ready to start your Sprint!',
@@ -222,10 +172,10 @@ const Onboard = ({ navigation }) => {
 
   const { container, backImage, view } = styles
   const { navigate } = navigation
-  const { header, icon, index, content, image } = steps[step]
+  const { header, icon, content, image } = steps[step]
   return (
     <ImageBackground source={image} style={backImage}>
-      <ScrollView style={container}>
+      <ScrollView style={container} showsHorizontalScrollIndicator={false}>
         <View style={view}>
           <TheText bold xxl color={'white'} centered>
             {header}

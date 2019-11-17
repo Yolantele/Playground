@@ -1,37 +1,41 @@
+export const MAX_BASE = 3
+export const MAX_DAILIES = 3
+export const MAX_BONUS = 4
+
 export const BASE = [
-  'No added sugar',
-  'Vegetable with each meal',
-  'Drink 2l of Water',
-  'Organic Food',
-  'Deep Breathing'
+  'No added Sugar 🍩',
+  'Veg with each Meal 🥦',
+  'Drink 2l of Water 💦',
+  'Organic Food 🥗',
+  'Deep Breathing 💨'
 ]
 export const DAILIES = [
-  'Complete a Workout ',
-  'Meditate',
-  'Have a suprefood drink',
+  'Complete a Workout 🤸🏻‍♀️',
+  'Meditate 🧘🏾‍♂️',
+  'Have a Suprefood Drink ',
   'Take Vitamins',
-  'Complete 10 000 steps'
+  'Complete 10 000 Steps'
 ]
 export const BONUS = [
-  'Face Toning Massage',
-  'Body Exfoliation',
-  'Sauna treatment',
-  'Foam Rolling',
-  'Journaling'
+  'Face Toning Massage 💁‍♀️',
+  'Body Exfoliation 👯‍♂️',
+  'Sauna Treatment 🧖‍♀️',
+  'Foam Rolling ',
+  'Journaling ✏️'
 ]
 
 export const RULES = [
   {
-    head: '1 BASE',
+    head: '1 - BASE 🏠',
     text: 'the makeup of each day for the length of your Glo Sprint'
   },
-  { head: '2 DALIES', text: 'complete the tasks once a day' },
-  { head: '3 BONUS', text: 'complete a set number of tasks at least once a week' }
+  { head: '2 - DALIES ⏰', text: 'complete the tasks once a day' },
+  { head: '3 - BONUS 🔥', text: 'complete a set number of tasks at least once a week' }
 ]
 
 export const SPRINT_TYPE = [
-  { text: 'Power from within!', button: 'Go Solo 🤸🏻‍', val: 'solo' },
-  { text: 'Power in numbers!', button: 'Go Tribe 💥', val: 'tribe' }
+  { text: 'Power from within!', button: 'Glo Solo 🤸🏻‍', val: 'solo' },
+  { text: 'Power in numbers!', button: 'Glo Tribe 💥', val: 'tribe' }
 ]
 
 export const SPRINT_LENGTH = [
