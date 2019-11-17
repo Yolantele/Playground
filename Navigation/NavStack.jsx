@@ -1,6 +1,7 @@
 import { Home } from '../Screens/Home'
 import { Profile } from '../Screens/Profile'
 import { Checkin } from '../Screens/Checkin'
+import { Onboard } from '../Screens/Onboard'
 import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
 import { createBottomTabNavigator } from 'react-navigation-tabs'
@@ -10,11 +11,12 @@ import { backgroundColor } from '../customTheme'
 
 const customisedLook = {
   headerMode: 'screen',
-  cardStyle: { backgroundColor: backgroundColor },
+  cardStyle: { backgroundColor },
   mode: 'card'
 }
 const HomeStack = createStackNavigator(
   {
+    Onboard,
     Home,
     Checkin
   },
@@ -52,7 +54,7 @@ const NavStack = createAppContainer(
           const { routeName } = navigation.state
           let iconName
           if (routeName === 'Home') iconName = `home`
-          if (routeName === 'Profile') iconName = `user`
+          if (routeName === 'Profile') iconName = `smile`
           if (routeName === 'Checkin') iconName = `audio`
 
           return (
