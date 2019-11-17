@@ -21,11 +21,11 @@ export const brandGlow = {
   shadowRadius: 7
 }
 export const customTheme = {
-  color_text_base: '#3a353b',
+  color_text_base: '#4c474d',
   color_text_base_inverse: '#f5f0f0',
   color_text_secondary: '#a4a9b0',
-  color_text_placeholder: '#bbbbbb',
-  color_text_disabled: '#bbbbbb',
+  color_text_placeholder: '#5f4e6e',
+  color_text_disabled: '#5f4e6e',
   color_text_caption: '#888888',
   color_text_paragraph: '#413a42',
   color_link: primaryColour,
@@ -38,7 +38,7 @@ export const customTheme = {
   color_icon_base: '#cccccc',
   fill_grey: '#f7f7f7',
 
-  opacity_disabled: '0.3',
+  opacity_disabled: '0.6',
 
   brand_primary: primaryColour,
   brand_primary_tap: primaryColourTap,
