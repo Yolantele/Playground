@@ -40,7 +40,7 @@ const TheText = ({ children, bold, light, large, small, xl, xxl, color, centered
 
 const styles = StyleSheet.create({
   text: {
-    fontFamily: 'helvetica',
+    fontFamily: 'Avenir-light',
     color: textColour,
     letterSpacing: 0.9
   }
