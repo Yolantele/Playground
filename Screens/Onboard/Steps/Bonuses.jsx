@@ -4,7 +4,7 @@ import { TheText, TheCard } from '../../../UI'
 import styles from '../OnboardStyle'
 import { Button, WhiteSpace, InputItem } from '@ant-design/react-native'
 import { specialTextColour, secondaryColour } from '../../../customTheme'
-import { BONUS, MAX_BONUS } from '../const'
+import { BONUS, MAX_BONUS, INPUT_MAX } from '../const'
 
 const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
   const onChooseBonus = bon => {
@@ -22,6 +22,7 @@ const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
       {
         <InputItem
           clear
+          maxLength={INPUT_MAX}
           value={value}
           onChange={val => setValue(val)}
           placeholder={

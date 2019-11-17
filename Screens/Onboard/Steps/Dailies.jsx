@@ -4,7 +4,7 @@ import { TheText, TheCard } from '../../../UI'
 import styles from '../OnboardStyle'
 import { Button, WhiteSpace, InputItem } from '@ant-design/react-native'
 import { specialTextColour, secondaryColour } from '../../../customTheme'
-import { DAILIES, MAX_DAILIES } from '../const'
+import { DAILIES, MAX_DAILIES, INPUT_MAX } from '../const'
 
 const Dailies = ({ setDailies, resetDailies, setValue, value, dailies, next }) => {
   const onChooseDailies = dailie => !dailies.includes(dailie) && setDailies(dailie)
@@ -19,12 +19,13 @@ const Dailies = ({ setDailies, resetDailies, setValue, value, dailies, next }) =
       <WhiteSpace size="lg" />
       {
         <InputItem
+          maxLength={INPUT_MAX}
           clear
           value={value}
           onChange={val => setValue(val)}
           placeholder={
             dailies.length === MAX_DAILIES
-              ? `Max of ${MAX_DAILIES} DAILIES 😊`
+              ? `The max of ${MAX_DAILIES} DAILIES added!`
               : 'Add your own DALIES here...'
           }
           extra={

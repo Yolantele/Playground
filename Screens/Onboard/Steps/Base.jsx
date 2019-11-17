@@ -4,7 +4,7 @@ import { TheText, TheCard } from '../../../UI'
 import styles from '../OnboardStyle'
 import { Button, InputItem, WhiteSpace } from '@ant-design/react-native'
 import { specialTextColour, secondaryColour } from '../../../customTheme'
-import { BASE, MAX_BASE } from '../const'
+import { BASE, MAX_BASE, INPUT_MAX } from '../const'
 
 const Base = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => {
   return (
@@ -21,6 +21,7 @@ const Base = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => 
           clear
           value={value}
           onChange={val => setValue(val)}
+          maxLength={INPUT_MAX}
           placeholder={
             base.length === MAX_BASE
               ? `You have added the max ${MAX_BASE} BASE items`
