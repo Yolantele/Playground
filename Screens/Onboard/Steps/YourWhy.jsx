@@ -11,17 +11,29 @@ import {
   fontSizeBase
 } from '../../../customTheme'
 
-const YourWhy = ({ next, goHome }) => {
+const YourWhy = ({ nextSection, goHome }) => {
   const [why, setWhy] = useState({ goal: '', yourWhy: 'some', commonPitfalls: [], solutions: [] })
   const [step, setStep] = useState(0)
   const [value, onChangeText] = useState('')
+
+  const changeSection = () => {
+    if (step === steps.length + 1) {
+      nextSection()
+    } else {
+      setStep(step + 1)
+    }
+  }
+
   const steps = [
     {
       title: 'A strong enough reason to embark on this journey',
-      sub: `'I want to look like that girl on instagram' - may not be the strongest reason 😉`,
+      sub: `'I want to look like that girl on instagram' - may not be the strongest of reasons 😉`,
       content: (
         <>
-          <TheText centered>SO....Why do you want to do this?</TheText>
+          <WhiteSpace size="xl" />
+          <TheText large centered bold>
+            SO....Why do you really want to do this?
+          </TheText>
           <WhiteSpace />
           <View
             style={{
@@ -44,6 +56,16 @@ const YourWhy = ({ next, goHome }) => {
         </View>
       ),
       buttonText: 'Catch pitfalls 😖>'
+    },
+    {
+      title: 'What can you set in place?',
+      sub: `Now that you are aware of your common blockers, lets something in place to combat each blocker! This step will help to customise your Glow journey!`,
+      content: (
+        <View>
+          <TheCard></TheCard>
+        </View>
+      ),
+      buttonText: 'Customise Sprint 💃🏻>'
     }
   ]
 
@@ -60,19 +82,27 @@ const YourWhy = ({ next, goHome }) => {
         </TheText>
       </TheCard>
       {content}
-      <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-        <Button
-          type="ghost"
-          onPress={() => setStep(step + 1)}
-          style={{ ...styles.buttonStyle, margin: 10 }}>
-          Skip to Setup
-        </Button>
-        <Button onPress={() => setStep(step + 1)} style={{ ...styles.buttonStyle, margin: 10 }}>
-          <TheText bold large color={secondaryColour} onPress={() => setStep(step + 1)}>
-            {buttonText}
+      {step !== steps.length - 1 ? (
+        <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+          <Button
+            type="ghost"
+            onPress={() => nextSection(1)}
+            style={{ ...styles.buttonStyle, margin: 10 }}>
+            Skip
+          </Button>
+          <Button onPress={() => changeSection()} style={{ ...styles.buttonStyle, margin: 10 }}>
+            <TheText bold large color={secondaryColour} onPress={() => changeSection()}>
+              {buttonText}
+            </TheText>
+          </Button>
+        </View>
+      ) : (
+        <Button onPress={() => nextSection(1)} style={{ ...styles.buttonStyle, margin: 10 }}>
+          <TheText bold large color={secondaryColour} onPress={() => nextSection(1)}>
+            Customise Sprint 💃🏻>
           </TheText>
         </Button>
-      </View>
+      )}
     </View>
   )
 }

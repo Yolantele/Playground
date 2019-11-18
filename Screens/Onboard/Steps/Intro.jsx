@@ -13,12 +13,11 @@ const Intro = ({ next, goHome }) => (
       </TheText>
       <TheText bold large centered color={secondaryColour}>
         To make sure you are as motivate as can be, go on and discover or get even more connectected
-        to Why are you doing this. Or go ahead to set up of a sprint unique to You 👏
+        to Why are you doing this. Or go through just the essential steps! 👏
       </TheText>
     </TheCard>
     {[
-      { text: `Let's Discover My Why! 🤸🏻‍`, action: () => next(1) },
-      { text: `Go Straight to Setup 😊`, action: () => next(2) },
+      { text: `Let's Go ! 🤸🏻‍`, action: () => next(1) },
       { text: `Skip Setup`, action: goHome, type: 'ghost' }
     ].map(({ text, action, type }, i) => (
       <Button

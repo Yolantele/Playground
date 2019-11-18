@@ -67,12 +67,7 @@ const Onboard = ({ navigation }) => {
       icon: 'fire',
       image: ONBOARD
     },
-    {
-      header: 'What is your Big WHY ?',
-      content: <YourWhy next={() => setStep(step + 1)} />,
-      icon: 'edit',
-      image: ONBOARD_3
-    },
+
     {
       header: 'What kind of Sprinter are you?',
       content: <SprintType setType={() => setType()} />,
@@ -83,6 +78,12 @@ const Onboard = ({ navigation }) => {
       header: 'How Long do you want to sprint for?',
       content: <SprintLength setLength={sprint => setLength(sprint)} />,
       icon: 'dashboard',
+      image: ONBOARD_3
+    },
+    {
+      header: 'What is your Big WHY ?',
+      content: <YourWhy nextSection={(val = 1) => setStep(step + val)} />,
+      icon: 'edit',
       image: ONBOARD_3
     },
     {
