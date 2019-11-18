@@ -12,17 +12,25 @@ const Intro = ({ next, goHome }) => (
         We're happy to see you start Your Own Glo Sprint ! ☺️
       </TheText>
       <TheText bold large centered color={secondaryColour}>
-        Lets set one unique to You 👏
+        To make sure you are as motivate as can be, go on and discover or get even more connectected
+        to Why are you doing this. Or go ahead to set up of a sprint unique to You 👏
       </TheText>
     </TheCard>
-    <Button style={{ ...styles.buttonStyle, margin: 10 }} onPress={next}>
-      <TheText bold xl color={secondaryColour} onPress={next}>
-        Let's Glo! 🤸🏻‍
-      </TheText>
-    </Button>
-    <Button type="ghost" onPress={goHome} style={{ ...styles.buttonStyle, margin: 10 }}>
-      Skip Setup
-    </Button>
+    {[
+      { text: `Let's Discover My Why! 🤸🏻‍`, action: () => next(1) },
+      { text: `Go Straight to Setup 😊`, action: () => next(2) },
+      { text: `Skip Setup`, action: goHome, type: 'ghost' }
+    ].map(({ text, action, type }, i) => (
+      <Button
+        type={type && type}
+        style={{ ...styles.buttonStyle, margin: 10 }}
+        onPress={action}
+        key={i}>
+        <TheText bold xl color={secondaryColour} onPress={action}>
+          {text}
+        </TheText>
+      </Button>
+    ))}
   </View>
 )
 

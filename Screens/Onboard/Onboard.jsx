@@ -7,7 +7,7 @@ import { brandShadow, brandGlow, specialTextColour, secondaryColour } from '../.
 import { ONBOARD, ONBOARD_2, ONBOARD_3 } from '../../Assets/Images'
 import { IconFill } from '@ant-design/icons-react-native'
 import { MAX_BASE, MAX_DAILIES, MAX_BONUS } from './const'
-import { Base, Rules, SprintLength, SprintType, Dailies, Bonuses, Intro } from './Steps'
+import { Base, Rules, SprintLength, SprintType, Dailies, Bonuses, Intro, YourWhy } from './Steps'
 
 const Onboard = ({ navigation }) => {
   const [step, setStep] = useState(0)
@@ -63,9 +63,15 @@ const Onboard = ({ navigation }) => {
   const steps = [
     {
       header: 'Welcome to Glo!',
-      content: <Intro next={() => setStep(step + 1)} goHome={() => navigate('Home')} />,
+      content: <Intro next={page => setStep(step + page)} goHome={() => navigate('Home')} />,
       icon: 'fire',
       image: ONBOARD
+    },
+    {
+      header: 'What is your Big WHY ?',
+      content: <YourWhy next={() => setStep(step + 1)} />,
+      icon: 'edit',
+      image: ONBOARD_3
     },
     {
       header: 'What kind of Sprinter are you?',
