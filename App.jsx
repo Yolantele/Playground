@@ -1,7 +1,7 @@
-import { customTheme } from './customTheme'
 import React from 'react'
-import { Provider } from '@ant-design/react-native'
 import { NavStack } from './Navigation'
+import { Provider } from '@ant-design/react-native'
+import { customTheme } from './customTheme'
 
 const App = () => (
   <Provider theme={customTheme}>

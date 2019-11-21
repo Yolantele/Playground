@@ -18,7 +18,7 @@ const Base = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => 
       </TheText>
       <OneLineInput
         head="Type in BASE items:"
-        action={() => setBonus(value)}
+        action={() => setBaseItems(value)}
         onChange={val => setValue(val)}
         disabled={base.length === MAX_BASE || value === ''}
         title="Add"

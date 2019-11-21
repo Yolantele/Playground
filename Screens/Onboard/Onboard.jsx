@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { ScrollView, View, ImageBackground } from 'react-native'
 import { TheText } from '../../UI'
 import styles from './OnboardStyle'
-import { Button } from '@ant-design/react-native'
+import { Button, WhiteSpace } from '@ant-design/react-native'
 import { brandShadow, brandGlow, specialTextColour, secondaryColour } from '../../customTheme'
 import { ONBOARD, ONBOARD_2, ONBOARD_3 } from '../../Assets/Images'
 import { IconFill } from '@ant-design/icons-react-native'
@@ -82,7 +82,7 @@ const Onboard = ({ navigation }) => {
     },
     {
       header: 'What is your Big WHY ?',
-      content: <YourWhy nextSection={(val = 1) => setStep(step + val)} />,
+      content: <YourWhy nextSection={() => setStep(step + 1)} />,
       icon: 'edit',
       image: ONBOARD_3
     },
@@ -164,7 +164,7 @@ const Onboard = ({ navigation }) => {
       <ScrollView style={container} showsHorizontalScrollIndicator={false} snapToStart={true}>
         <View style={view}>
           <TheText bold xxl color={'white'} centered>
-            {header}
+            {header && header}
           </TheText>
           <IconFill
             name={icon}
@@ -180,6 +180,7 @@ const Onboard = ({ navigation }) => {
           )}
         </View>
       </ScrollView>
+      <WhiteSpace size="xl" />
     </ImageBackground>
   )
 }

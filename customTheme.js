@@ -5,6 +5,7 @@ export const specialTextColour = '#c9ffe8'
 export const bodyColour = '#ffefeb'
 export const textColour = '#3a353b'
 export const backgroundColor = '#ffcec2'
+export const lightColour = 'white'
 export const fontSizeBase = 14
 export const radiusBase = 20
 export const lineHeight = 20
