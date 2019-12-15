@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import { ScrollView, View } from 'react-native'
-import { TheText } from '../../UI'
-import { bodyColour } from '../../customTheme'
 import { Button, Drawer, List } from '@ant-design/react-native'
 import { IconFill, IconOutline } from '@ant-design/icons-react-native'
-import { primaryColour } from '../../customTheme'
+import React, { useState } from 'react'
+import { ScrollView, View } from 'react-native'
+
+import { COLOURS } from '../../customTheme'
+import { TheText } from '../../UI'
 
 const ITEMS = ['My Sprint', 'Landmarks', 'Tribe Feed']
 
@@ -30,7 +30,7 @@ const SideDrawer = ({ children, items = ITEMS }) => {
         {items.map((item, index) => (
           <Item key={index}>
             <View style={drawerRowStyle}>
-              <IconOutline name="smile" size={30} style={{ margin: 10, color: primaryColour }} />
+              <IconOutline name="smile" size={30} style={{ margin: 10, color: COLOURS.primary }} />
               <TheText>
                 {item} - {index}
               </TheText>
@@ -47,7 +47,7 @@ const SideDrawer = ({ children, items = ITEMS }) => {
       position="left"
       // open={drawer}
       // onOpenChange={() => setDrawer(true)}
-      drawerBackgroundColor={bodyColour}>
+      drawerBackgroundColor={COLOURS.body}>
       {children}
     </Drawer>
   )

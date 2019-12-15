@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import { ScrollView, View, ImageBackground, Animated } from 'react-native'
+import { Animated, ImageBackground, ScrollView, View } from 'react-native'
+import { Base, Bonuses, Dailies, Intro, Length, Rules, Type, Why } from './Steps'
+import { Button, WhiteSpace } from '@ant-design/react-native'
+import { COLOURS, brandGlow, brandShadow } from '../../customTheme'
+import { MAX_BASE, MAX_BONUS, MAX_DAILIES } from './const'
+import React, { useEffect, useState } from 'react'
+
+import { IconFill } from '@ant-design/icons-react-native'
+import { ONBOARD } from '../../Assets/Images'
 import { TheText } from '../../UI'
 import styles from './Style'
-import { Button, WhiteSpace } from '@ant-design/react-native'
-import { brandShadow, brandGlow, specialTextColour, secondaryColour } from '../../customTheme'
-import { ONBOARD } from '../../Assets/Images'
-import { IconFill } from '@ant-design/icons-react-native'
-import { MAX_BASE, MAX_DAILIES, MAX_BONUS } from './const'
-import { Base, Rules, SprintLength, SprintType, Dailies, Bonuses, Intro, YourWhy } from './Steps'
-import { useAnimate } from '../../Hooks'
 
+const { secondary, specialText } = COLOURS
 const { IMG1, IMG2, IMG3, IMG4, IMG5, IMG6, IMG7, IMG8, IMG9 } = ONBOARD
 
 const Onboard = ({ navigation }) => {
@@ -18,8 +19,8 @@ const Onboard = ({ navigation }) => {
   const [step, setStep] = useState(0)
   const [value, setValue] = useState('')
   const [journey, setJourney] = useState({
-    sprintType: '',
-    sprintLength: '',
+    Type: '',
+    Length: '',
     base: [],
     dailies: [],
     bonus: []
@@ -67,7 +68,7 @@ const Onboard = ({ navigation }) => {
   }
 
   const setLength = sprint => {
-    setJourney({ ...journey, sprintLength: sprint.val })
+    setJourney({ ...journey, Length: sprint.val })
     onNextStep()
   }
 
@@ -84,7 +85,7 @@ const Onboard = ({ navigation }) => {
   }
 
   const setType = val => {
-    setJourney({ ...journey, sprintType: val })
+    setJourney({ ...journey, Type: val })
     onNextStep()
   }
 
@@ -98,19 +99,19 @@ const Onboard = ({ navigation }) => {
 
     {
       header: 'What kind of Sprinter are you?',
-      content: <SprintType setType={val => setType(val)} />,
+      content: <Type setType={val => setType(val)} />,
       icon: 'rocket',
       image: IMG2
     },
     {
       header: 'How Long do you want to sprint for?',
-      content: <SprintLength setLength={sprint => setLength(sprint)} />,
+      content: <Length setLength={sprint => setLength(sprint)} />,
       icon: 'dashboard',
       image: IMG3
     },
     {
       header: 'What is your Big WHY ?',
-      content: <YourWhy nextSection={() => setStep(step + 1)} />,
+      content: <Why nextSection={() => setStep(step + 1)} />,
       icon: 'edit',
       image: IMG4
     },
@@ -171,11 +172,11 @@ const Onboard = ({ navigation }) => {
       image: IMG9,
       content: (
         <View style={styles.section}>
-          <TheText xl bold centered color={specialTextColour}>
+          <TheText xl bold centered color={specialText}>
             Come back each day to check in with your progress and log it. Good luck with the sprint!
           </TheText>
           <Button style={{ ...brandShadow, ...brandGlow, margin: 20 }}>
-            <TheText bold color={secondaryColour} onPress={() => navigate('Home', { journey })}>
+            <TheText bold color={secondary} onPress={() => navigate('Home', { journey })}>
               Go to Home >
             </TheText>
           </Button>

@@ -1,10 +1,13 @@
+import { BONUS, MAX_BONUS } from '../const'
+import { Button, WhiteSpace } from '@ant-design/react-native'
+import { OneLineInput, TheCard, TheText } from '../../../UI'
+
+import { COLOURS } from '../../../customTheme'
 import React from 'react'
 import { View } from 'react-native'
-import { TheText, TheCard, OneLineInput } from '../../../UI'
 import styles from '../Style'
-import { Button, WhiteSpace } from '@ant-design/react-native'
-import { specialTextColour, secondaryColour } from '../../../customTheme'
-import { BONUS, MAX_BONUS } from '../const'
+
+const { secondary, specialText } = COLOURS
 
 const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
   const onChooseBonus = bon => {
@@ -12,10 +15,10 @@ const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
   }
   return (
     <View style={styles.section}>
-      <TheText xl bold centered color={specialTextColour}>
+      <TheText xl bold centered color={specialText}>
         Complete each BONUS task at least once a week!
       </TheText>
-      <TheText large bold centered color={specialTextColour}>
+      <TheText large bold centered color={specialText}>
         Earns 2 Glos each
       </TheText>
       <OneLineInput
@@ -33,14 +36,14 @@ const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
       />
       <View style={styles.card}>
         <TheCard>
-          <TheText bold large color={secondaryColour}>
+          <TheText bold large color={secondary}>
             Once a Week:
           </TheText>
           <WhiteSpace />
           {bonuses && bonuses.length
             ? bonuses.map((each, i) => (
                 <View style={styles.rowButton} key={i}>
-                  <TheText bold large centered color={secondaryColour}>
+                  <TheText bold large centered color={secondary}>
                     {i + 1} - {each}
                   </TheText>
                   <Button
@@ -70,7 +73,7 @@ const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
                   style={styles.buttonStyle}
                   key={i}
                   onPress={() => onChooseBonus(bon)}>
-                  <TheText large bold color={secondaryColour} onPress={() => onChooseBonus(bon)}>
+                  <TheText large bold color={secondary} onPress={() => onChooseBonus(bon)}>
                     {bon}
                   </TheText>
                 </Button>
@@ -80,15 +83,15 @@ const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
         </>
       ) : (
         <>
-          <TheText xl bold centered color={specialTextColour}>
+          <TheText xl bold centered color={specialText}>
             You have chosen the max number of BONUS items, whoa !
           </TheText>
-          <TheText large bold centered color={specialTextColour}>
+          <TheText large bold centered color={specialText}>
             Lets see how many Glos you can collect during this sprint!
           </TheText>
           <WhiteSpace sixe="xl" />
           <Button onPress={next}>
-            <TheText large bold color={secondaryColour} onPress={next}>
+            <TheText large bold color={secondary} onPress={next}>
               Let't go 💥
             </TheText>
           </Button>

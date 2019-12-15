@@ -1,19 +1,22 @@
+import { BASE, MAX_BASE } from '../const'
+import { Button, WhiteSpace } from '@ant-design/react-native'
+import { OneLineInput, TheCard, TheText } from '../../../UI'
+
+import { COLOURS } from '../../../customTheme'
 import React from 'react'
 import { View } from 'react-native'
-import { TheText, TheCard, OneLineInput } from '../../../UI'
 import styles from '../Style'
-import { Button, WhiteSpace } from '@ant-design/react-native'
-import { specialTextColour, secondaryColour } from '../../../customTheme'
-import { BASE, MAX_BASE } from '../const'
+
+const { secondary, specialText } = COLOURS
 
 const Base = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => {
   const onChooseBase = each => !base.includes(each) && setBaseItems(each)
   return (
     <View style={styles.section}>
-      <TheText xl bold centered color={specialTextColour}>
+      <TheText xl bold centered color={specialText}>
         Set the makeup of each day for the length of your Glo sprint:
       </TheText>
-      <TheText large centered color={specialTextColour}>
+      <TheText large centered color={specialText}>
         Each completed BASE earns 1 Glo a day! Glos double if all completed.
       </TheText>
       <OneLineInput
@@ -31,14 +34,14 @@ const Base = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => 
       />
       <View style={styles.card}>
         <TheCard>
-          <TheText bold large color={secondaryColour}>
+          <TheText bold large color={secondary}>
             Throughout the day:
           </TheText>
           <WhiteSpace />
           {base && base.length
             ? base.map((each, i) => (
                 <View style={styles.rowButton} key={i}>
-                  <TheText bold large centered color={secondaryColour}>
+                  <TheText bold large centered color={secondary}>
                     {i + 1} - {each}
                   </TheText>
                   <Button
@@ -65,7 +68,7 @@ const Base = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => 
             <>
               {!base.includes(each) && (
                 <Button style={styles.buttonStyle} key={i} onPress={() => onChooseBase(each)}>
-                  <TheText bold large color={secondaryColour} onPress={() => onChooseBase(each)}>
+                  <TheText bold large color={secondary} onPress={() => onChooseBase(each)}>
                     {each}
                   </TheText>
                 </Button>
@@ -75,15 +78,15 @@ const Base = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => 
         </>
       ) : (
         <>
-          <TheText xl bold centered color={specialTextColour}>
+          <TheText xl bold centered color={specialText}>
             You have chosen {MAX_BASE} things as the BASE makeup for each day 👏🎬
           </TheText>
-          <TheText large bold centered color={specialTextColour}>
+          <TheText large bold centered color={specialText}>
             Next, let's set the tasks you want to complete once a day 🙌
           </TheText>
           <WhiteSpace sixe="xl" />
           <Button onPress={next}>
-            <TheText large bold color={secondaryColour} onPress={next}>
+            <TheText large bold color={secondary} onPress={next}>
               Set DAILIES >
             </TheText>
           </Button>

@@ -22,7 +22,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: 10
   },
-  buttonStyle: { margin: 5, ...brandShadow, ...brandGlow }
+  buttonStyle: { margin: 5, ...brandShadow, ...brandGlow },
+  subStep: { display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }
 })
 
 export default styles

@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import { Text, StyleSheet } from 'react-native'
-import { textColour, fontSizeBase, lineHeight } from '../customTheme'
+import { COLOURS, fontSizeBase, lineHeight } from '../customTheme'
+import React, { useEffect, useState } from 'react'
+import { StyleSheet, Text } from 'react-native'
 
 const MAX_FONT_SIZE = 20
-
 const TheText = ({ children, bold, light, large, small, xl, xxl, color, centered, ...rest }) => {
   const { text } = styles
   const [fontSize, setFontSize] = useState(fontSizeBase)
@@ -41,7 +40,7 @@ const TheText = ({ children, bold, light, large, small, xl, xxl, color, centered
 const styles = StyleSheet.create({
   text: {
     fontFamily: 'Avenir-light',
-    color: textColour,
+    color: COLOURS.text,
     letterSpacing: 0.9
   }
 })

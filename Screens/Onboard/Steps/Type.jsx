@@ -1,16 +1,16 @@
-import React from 'react'
-import { View } from 'react-native'
-import { TheText } from '../../../UI'
-import styles from '../Style'
 import { Button } from '@ant-design/react-native'
-import { secondaryColour } from '../../../customTheme'
+import { COLOURS } from '../../../customTheme'
+import React from 'react'
 import { SPRINT_TYPE } from '../const'
+import { TheText } from '../../../UI'
+import { View } from 'react-native'
+import styles from '../Style'
 
-const SprintType = ({ setType }) => (
+const Type = ({ setType }) => (
   <>
     {SPRINT_TYPE.map((op, i) => (
       <View style={{ marginTop: 20, marginBottom: 20 }} key={i}>
-        <TheText xl bold color={secondaryColour}>
+        <TheText xl bold color={COLOURS.secondary}>
           {op.text}
         </TheText>
 
@@ -18,7 +18,11 @@ const SprintType = ({ setType }) => (
           style={{ ...styles.buttonStyle, margin: 10 }}
           onPress={() => setType(op.val)}
           disabled={op.disabled}>
-          <TheText bold xl color={secondaryColour} onPress={() => !op.disabled && setType(op.val)}>
+          <TheText
+            bold
+            xl
+            color={COLOURS.secondary}
+            onPress={() => !op.disabled && setType(op.val)}>
             {op.button}
           </TheText>
         </Button>
@@ -32,4 +36,4 @@ const SprintType = ({ setType }) => (
   </>
 )
 
-export default SprintType
+export default Type

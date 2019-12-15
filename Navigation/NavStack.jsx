@@ -1,17 +1,18 @@
-import { Home } from '../Screens/Home'
-import { Profile } from '../Screens/Profile'
-import { Checkin } from '../Screens/Checkin'
-import { Onboard } from '../Screens/Onboard'
-import { createAppContainer } from 'react-navigation'
-import { createStackNavigator } from 'react-navigation-stack'
-import { createBottomTabNavigator } from 'react-navigation-tabs'
 import { IconFill, IconOutline } from '@ant-design/icons-react-native'
+
+import { COLOURS } from '../customTheme'
+import { Checkin } from '../Screens/Checkin'
+import { Home } from '../Screens/Home'
+import { Onboard } from '../Screens/Onboard'
+import { Profile } from '../Screens/Profile'
 import React from 'react'
-import { backgroundColor } from '../customTheme'
+import { createAppContainer } from 'react-navigation'
+import { createBottomTabNavigator } from 'react-navigation-tabs'
+import { createStackNavigator } from 'react-navigation-stack'
 
 const customisedLook = {
   headerMode: 'screen',
-  cardStyle: { backgroundColor },
+  cardStyle: { backgroundColor: COLOURS.background },
   mode: 'card'
 }
 const HomeStack = createStackNavigator(

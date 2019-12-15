@@ -1,33 +1,17 @@
+import { Button, TextareaItem, WhiteSpace } from '@ant-design/react-native'
+import { COLOURS, radiusBase } from '../../../customTheme'
+import { GoalForm, TheCard, TheText } from '../../../UI'
 import React, { useState } from 'react'
-import { View } from 'react-native'
-import { TheText, TheCard } from '../../../UI'
-import styles from '../Style'
-import { Button, WhiteSpace, TextareaItem } from '@ant-design/react-native'
-import { secondaryColour, radiusBase, lightColour, specialTextColour } from '../../../customTheme'
+
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { View } from 'react-native'
+import styles from '../Style'
 
-const GoalForm = ({ val, onChange, foot, placeHold }) => (
-  <>
-    <TextareaItem
-      style={{ margin: 10, borderRadius: radiusBase }}
-      maxLength={100}
-      clear
-      value={val}
-      onChange={onChange}
-      placeholder={placeHold}
-      rows={6}
-    />
-    <TheText large color={lightColour}>
-      {foot}
-    </TheText>
-    <WhiteSpace size="lg" />
-  </>
-)
-const YourWhy = ({ nextSection, goHome }) => {
-  const [why, setWhy] = useState({ goal: '', yourWhy: '', commonPitfalls: '', solutions: '' })
+const { light, secondary, specialText } = COLOURS
+
+const Why = ({ nextSection }) => {
+  const [why, setWhy] = useState({ goal: '', myWhy: '', pitfalls: '', solutions: '' })
   const [subStep, setSubStep] = useState(0)
-
-  console.log('why is===', why)
 
   const changeSection = () => {
     if (subStep === steps.length + 1) {
@@ -47,15 +31,12 @@ const YourWhy = ({ nextSection, goHome }) => {
             style={{ margin: 10, borderRadius: radiusBase }}
             maxLength={100}
             clear
-            value={why.yourWhy}
-            onChange={value => {
-              console.log('value is ==', value)
-              setWhy({ ...why, yourWhy: value })
-            }}
+            value={why.myWhy}
+            onChange={myWhy => setWhy({ ...why, myWhy })}
             placeholder={'Note your reason here...'}
             rows={6}
           />
-          <TheText large color={lightColour}>
+          <TheText large color={light}>
             We will use your Why note as the Reminder during the Glo Sprint
           </TheText>
           <WhiteSpace size="lg" />
@@ -70,7 +51,7 @@ const YourWhy = ({ nextSection, goHome }) => {
         <GoalForm
           label={'What is your goal for the next {sprint days} days?'}
           val={why.goal}
-          onChange={val => setWhy({ ...why, goal: val })}
+          onChange={goal => setWhy({ ...why, goal })}
           foot={'We will use your Goal note as the Reminder during the Glo Sprint'}
           placeHold={'Note your goal here...'}
         />
@@ -84,7 +65,7 @@ const YourWhy = ({ nextSection, goHome }) => {
         <GoalForm
           label={'What are your common Pitfalls ?'}
           val={why.commonPitfalls}
-          onChange={val => setWhy({ ...why, commonPitfalls: val })}
+          onChange={pitfalls => setWhy({ ...why, pitfalls })}
           foot={'Did you note them all? The more the better'}
           placeHold={'Note your common Pitfalls here...'}
         />
@@ -96,22 +77,22 @@ const YourWhy = ({ nextSection, goHome }) => {
       sub: `Now that you are aware of your common pitfalls, lets brainstorm some ideas to combat each blocker! `,
       content: (
         <>
-          {why.commonPitfalls && why.commonPitfalls.length ? (
+          {why.pitfalls && why.pitfalls.length ? (
             <TheCard>
               <TheText bold large>
                 My Common Pitfalls are:
               </TheText>
-              <TheText large>{why.commonPitfalls}</TheText>
+              <TheText large>{why.pitfalls}</TheText>
             </TheCard>
           ) : null}
           <WhiteSpace size="lg" />
-          <TheText xl centered bold color={specialTextColour}>
-            What could be the solutions to counter-act the Pitfalls{' '}
-            {why.commonPitfalls && why.commonPitfalls.length ? 'listed above:' : '?'}
+          <TheText xl centered bold color={specialText}>
+            What could be the solutions to counter-act the Pitfalls
+            {why.pitfalls && why.pitfalls.length ? 'listed above:' : '?'}
           </TheText>
           <GoalForm
             val={why.solutions}
-            onChange={val => setWhy({ ...why, solutions: val })}
+            onChange={solutions => setWhy({ ...why, solutions })}
             foot={'This step should help you customise your Glow journey next!'}
             placeHold={'Note your solutions here...'}
           />
@@ -123,21 +104,22 @@ const YourWhy = ({ nextSection, goHome }) => {
 
   const { title, sub, content, buttonText } = steps[subStep]
   const isDisabled = false
+
   return (
     <KeyboardAwareScrollView>
       <View style={{ ...styles.section, flex: 1, width: '100%' }}>
-        <TheCard style={{ paddingBottom: '5%' }}>
-          <TheText bold xl centered color={secondaryColour}>
+        <TheCard>
+          <TheText bold xl centered color={secondary}>
             {title}
           </TheText>
           <WhiteSpace size="lg" />
-          <TheText bold large color={secondaryColour}>
+          <TheText bold large color={secondary}>
             {sub}
           </TheText>
         </TheCard>
         {content}
         {subStep !== steps.length - 1 ? (
-          <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+          <View style={styles.subStep}>
             <Button
               type="ghost"
               onPress={() => nextSection()}
@@ -148,14 +130,14 @@ const YourWhy = ({ nextSection, goHome }) => {
               disabled={isDisabled}
               onPress={() => changeSection()}
               style={{ ...styles.buttonStyle, margin: 10 }}>
-              <TheText bold large color={secondaryColour} onPress={() => changeSection()}>
+              <TheText bold large color={secondary} onPress={() => changeSection()}>
                 {buttonText}
               </TheText>
             </Button>
           </View>
         ) : (
           <Button onPress={() => nextSection} style={{ ...styles.buttonStyle, margin: 10 }}>
-            <TheText bold large color={secondaryColour} onPress={() => nextSection()}>
+            <TheText bold large color={secondary} onPress={() => nextSection()}>
               Customise Sprint 💃🏻>
             </TheText>
           </Button>
@@ -165,4 +147,4 @@ const YourWhy = ({ nextSection, goHome }) => {
     </KeyboardAwareScrollView>
   )
 }
-export default YourWhy
+export default Why
