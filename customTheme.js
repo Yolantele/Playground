@@ -1,11 +1,16 @@
-export const primaryColour = '#FF6767'
-export const primaryColourTap = '#C97698'
-export const secondaryColour = '#C97698'
-export const specialTextColour = '#c9ffe8'
-export const bodyColour = '#ffefeb'
-export const textColour = '#3a353b'
-export const backgroundColor = '#ffcec2'
-export const lightColour = 'white'
+export const COLOURS = {
+  primary: '#FF6767',
+  primaryTap: '#C97698',
+  secondary: '#C97698',
+  specialText: '#c9ffe8',
+  body: '#ffefeb',
+  text: '#3a353b',
+  background: '#ffcec2',
+  light: 'white'
+}
+
+const { primary, body, primaryTap } = COLOURS
+
 export const fontSizeBase = 14
 export const radiusBase = 20
 export const lineHeight = 20
@@ -17,7 +22,7 @@ export const brandShadow = {
 }
 
 export const brandGlow = {
-  shadowColor: primaryColour,
+  shadowColor: primary,
   shadowOpacity: 0.5,
   shadowRadius: 7
 }
@@ -29,11 +34,11 @@ export const customTheme = {
   color_text_disabled: '#5f4e6e',
   color_text_caption: '#888888',
   color_text_paragraph: '#413a42',
-  color_link: primaryColour,
+  color_link: primary,
 
-  fill_base: bodyColour,
-  fill_body: bodyColour,
-  fill_tap: bodyColour,
+  fill_base: body,
+  fill_body: body,
+  fill_tap: body,
   fill_disabled: '#dddddd',
   fill_mask: 'rgba(0, 0, 0, .4)',
   color_icon_base: '#cccccc',
@@ -41,8 +46,8 @@ export const customTheme = {
 
   opacity_disabled: '0.6',
 
-  brand_primary: primaryColour,
-  brand_primary_tap: primaryColourTap,
+  brand_primary: primary,
+  brand_primary_tap: primaryTap,
   brand_success: '#49c9b0',
   brand_warning: '#f0ab22',
   brand_error: '#bf1b5a',
@@ -97,10 +102,10 @@ export const customTheme = {
   button_height_sm: 23,
   button_font_size_sm: 12,
 
-  primary_button_fill: primaryColour,
-  primary_button_fill_tap: primaryColourTap,
+  primary_button_fill: primary,
+  primary_button_fill_tap: primaryTap,
 
-  ghost_button_color: primaryColour,
+  ghost_button_color: primary,
   ghost_button_fill_tap: 'lightgrey',
 
   warning_button_fill: '#e94f4f',
@@ -123,17 +128,17 @@ export const customTheme = {
   input_label_width: 17,
   input_font_size: 17,
   input_color_icon: '#cccccc',
-  input_color_icon_tap: primaryColour,
+  input_color_icon_tap: primary,
 
   //tabs
-  tabs_color: primaryColour,
+  tabs_color: primary,
   tabs_height: 42,
   tabs_font_size_heading: 15,
 
   //segmented_control
-  segmented_control_color: primaryColour,
+  segmented_control_color: primary,
   segmented_control_height: 27,
-  segmented_control_fill_tap: `${primaryColour}10`,
+  segmented_control_fill_tap: `${primary}10`,
 
   // tab_bar
   tab_bar_fill: '#ebeeef',
