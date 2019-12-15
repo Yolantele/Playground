@@ -8,7 +8,7 @@ const { Body, Header } = Card
 const cardStyle = {
   ...brandShadow,
   padding: 30,
-  paddingTop: 20,
+  paddingTop: 5,
   minHeight: 150,
   margin: 5
 }
