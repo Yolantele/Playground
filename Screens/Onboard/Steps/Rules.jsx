@@ -2,7 +2,7 @@ import React from 'react'
 import { View } from 'react-native'
 import { Button } from '@ant-design/react-native'
 import { TheText } from '../../../UI'
-import styles from '../OnboardStyle'
+import styles from '../Style'
 import { specialTextColour, secondaryColour } from '../../../customTheme'
 import { RULES } from '../const'
 

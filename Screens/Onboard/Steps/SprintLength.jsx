@@ -1,7 +1,7 @@
 import React from 'react'
 import { View } from 'react-native'
 import { TheText } from '../../../UI'
-import styles from '../OnboardStyle'
+import styles from '../Style'
 import { Button, WhiteSpace } from '@ant-design/react-native'
 import { specialTextColour, secondaryColour } from '../../../customTheme'
 import { SPRINT_LENGTH } from '../const'

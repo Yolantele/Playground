@@ -1,7 +1,7 @@
 import React from 'react'
 import { View } from 'react-native'
 import { TheText, TheCard, OneLineInput } from '../../../UI'
-import styles from '../OnboardStyle'
+import styles from '../Style'
 import { Button, WhiteSpace } from '@ant-design/react-native'
 import { specialTextColour, secondaryColour } from '../../../customTheme'
 import { BONUS, MAX_BONUS } from '../const'
@@ -16,7 +16,7 @@ const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
         Complete each BONUS task at least once a week!
       </TheText>
       <TheText large bold centered color={specialTextColour}>
-        Earns 2 glo points each
+        Earns 2 Glos each
       </TheText>
       <OneLineInput
         head="Type in Weekly BONUS items:"
@@ -31,48 +31,51 @@ const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
             : 'Add your own BONUS here...'
         }
       />
-      {bonuses.length ? (
-        <View style={styles.card}>
-          <TheCard>
-            <TheText bold large color={secondaryColour}>
-              Once a Week:
-            </TheText>
-            <WhiteSpace />
-            {bonuses.map((each, i) => (
-              <View style={styles.rowButton} key={i}>
-                <TheText bold large centered color={secondaryColour}>
-                  {i + 1} - {each}
-                </TheText>
-                <Button
-                  style={{ width: 25 }}
-                  size="small"
-                  type="ghost"
-                  onPress={() => {
-                    let newBonus = [...bonuses].filter(item => item !== each)
-                    resetBonus(newBonus)
-                  }}>
-                  -
-                </Button>
-              </View>
-            ))}
-          </TheCard>
-        </View>
-      ) : null}
+      <View style={styles.card}>
+        <TheCard>
+          <TheText bold large color={secondaryColour}>
+            Once a Week:
+          </TheText>
+          <WhiteSpace />
+          {bonuses && bonuses.length
+            ? bonuses.map((each, i) => (
+                <View style={styles.rowButton} key={i}>
+                  <TheText bold large centered color={secondaryColour}>
+                    {i + 1} - {each}
+                  </TheText>
+                  <Button
+                    style={{ width: 25 }}
+                    size="small"
+                    type="ghost"
+                    onPress={() => {
+                      let newBonus = [...bonuses].filter(item => item !== each)
+                      resetBonus(newBonus)
+                    }}>
+                    -
+                  </Button>
+                </View>
+              ))
+            : null}
+        </TheCard>
+      </View>
       <WhiteSpace size="lg" />
       {bonuses.length < MAX_BONUS ? (
         <>
           <TheText centered>Or choose any from Examples bellow:</TheText>
           {BONUS.map((bon, i) => (
-            <Button
-              key={i}
-              style={styles.buttonStyle}
-              key={i}
-              disabled={bonuses.includes(bon)}
-              onPress={() => onChooseBonus(bon)}>
-              <TheText large bold color={secondaryColour} onPress={() => onChooseBonus(bon)}>
-                {bon}
-              </TheText>
-            </Button>
+            <>
+              {!bonuses.includes(bon) && (
+                <Button
+                  key={i}
+                  style={styles.buttonStyle}
+                  key={i}
+                  onPress={() => onChooseBonus(bon)}>
+                  <TheText large bold color={secondaryColour} onPress={() => onChooseBonus(bon)}>
+                    {bon}
+                  </TheText>
+                </Button>
+              )}
+            </>
           ))}
         </>
       ) : (
@@ -81,7 +84,7 @@ const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
             You have chosen the max number of BONUS items, whoa !
           </TheText>
           <TheText large bold centered color={specialTextColour}>
-            Lets see how many Glo points you can collect during this sprint!
+            Lets see how many Glos you can collect during this sprint!
           </TheText>
           <WhiteSpace sixe="xl" />
           <Button onPress={next}>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { View } from 'react-native'
 import { TheText, TheCard } from '../../../UI'
-import styles from '../OnboardStyle'
+import styles from '../Style'
 import { Button, WhiteSpace } from '@ant-design/react-native'
 import { secondaryColour } from '../../../customTheme'
 

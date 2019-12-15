@@ -1,7 +1,7 @@
 import React from 'react'
 import { View } from 'react-native'
 import { TheText, TheCard, OneLineInput } from '../../../UI'
-import styles from '../OnboardStyle'
+import styles from '../Style'
 import { Button, WhiteSpace } from '@ant-design/react-native'
 import { specialTextColour, secondaryColour } from '../../../customTheme'
 import { BASE, MAX_BASE } from '../const'
@@ -29,47 +29,48 @@ const Base = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => 
             : 'Add your own BASE items here...'
         }
       />
-      {base && base.length ? (
-        <View style={styles.card}>
-          <TheCard>
-            <TheText bold large color={secondaryColour}>
-              Throughout the day:
-            </TheText>
-            <WhiteSpace />
-            {base.map((each, i) => (
-              <View style={styles.rowButton} key={i}>
-                <TheText bold large centered color={secondaryColour}>
-                  {i + 1} - {each}
-                </TheText>
-                <Button
-                  style={{ width: 25 }}
-                  size="small"
-                  type="ghost"
-                  onPress={() => {
-                    let newBase = [...base].filter(item => item !== each)
-                    resetBaseItems(newBase)
-                  }}>
-                  -
-                </Button>
-              </View>
-            ))}
-          </TheCard>
-        </View>
-      ) : null}
+      <View style={styles.card}>
+        <TheCard>
+          <TheText bold large color={secondaryColour}>
+            Throughout the day:
+          </TheText>
+          <WhiteSpace />
+          {base && base.length
+            ? base.map((each, i) => (
+                <View style={styles.rowButton} key={i}>
+                  <TheText bold large centered color={secondaryColour}>
+                    {i + 1} - {each}
+                  </TheText>
+                  <Button
+                    style={{ width: 25 }}
+                    size="small"
+                    type="ghost"
+                    onPress={() => {
+                      let newBase = [...base].filter(item => item !== each)
+                      resetBaseItems(newBase)
+                    }}>
+                    -
+                  </Button>
+                </View>
+              ))
+            : null}
+        </TheCard>
+      </View>
+
       <WhiteSpace size="lg" />
       {base.length < MAX_BASE ? (
         <>
           <TheText centered>Or choose any from Examples bellow:</TheText>
           {BASE.map((each, i) => (
-            <Button
-              style={styles.buttonStyle}
-              key={i}
-              disabled={base.includes(each)}
-              onPress={() => onChooseBase(each)}>
-              <TheText bold large color={secondaryColour} onPress={() => onChooseBase(each)}>
-                {each}
-              </TheText>
-            </Button>
+            <>
+              {!base.includes(each) && (
+                <Button style={styles.buttonStyle} key={i} onPress={() => onChooseBase(each)}>
+                  <TheText bold large color={secondaryColour} onPress={() => onChooseBase(each)}>
+                    {each}
+                  </TheText>
+                </Button>
+              )}
+            </>
           ))}
         </>
       ) : (

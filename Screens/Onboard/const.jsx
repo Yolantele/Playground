@@ -40,7 +40,13 @@ export const RULES = [
 
 export const SPRINT_TYPE = [
   { text: 'Power from within!', button: 'Glo Solo 🤸🏻‍', val: 'solo' },
-  { text: 'Power in numbers!', button: 'Glo Tribe 👯‍', val: 'tribe' }
+  {
+    text: 'Power in numbers!',
+    button: 'Glo Tribe 👯‍',
+    val: 'tribe',
+    disabled: true,
+    subText: 'Coming Soon!...'
+  }
 ]
 
 export const SPRINT_LENGTH = [

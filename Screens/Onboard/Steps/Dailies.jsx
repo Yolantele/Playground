@@ -1,7 +1,7 @@
 import React from 'react'
 import { View } from 'react-native'
 import { TheText, TheCard, OneLineInput } from '../../../UI'
-import styles from '../OnboardStyle'
+import styles from '../Style'
 import { Button, WhiteSpace, InputItem } from '@ant-design/react-native'
 import { specialTextColour, secondaryColour } from '../../../customTheme'
 import { DAILIES, MAX_DAILIES, INPUT_MAX } from '../const'
@@ -61,15 +61,15 @@ const Dailies = ({ setDailies, resetDailies, setValue, value, dailies, next }) =
         <>
           <TheText centered>Or choose any from Examples bellow:</TheText>
           {DAILIES.map((dailie, i) => (
-            <Button
-              onPress={() => onChooseDailies(dailie)}
-              style={styles.buttonStyle}
-              key={i}
-              disabled={dailies.includes(dailie)}>
-              <TheText bold color={secondaryColour} onPress={() => onChooseDailies(dailie)}>
-                {dailie}
-              </TheText>
-            </Button>
+            <>
+              {!dailies.includes(dailie) && (
+                <Button onPress={() => onChooseDailies(dailie)} style={styles.buttonStyle} key={i}>
+                  <TheText bold color={secondaryColour} onPress={() => onChooseDailies(dailie)}>
+                    {dailie}
+                  </TheText>
+                </Button>
+              )}
+            </>
           ))}
         </>
       ) : (

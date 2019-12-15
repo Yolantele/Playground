@@ -16,7 +16,7 @@
    `pod install`
    `cd ..`
 3. Run the app on ios :
-   `yarn run s`
+   `yarn s`
 
 ### Resolving Pod Build errors
 
