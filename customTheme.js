@@ -2,17 +2,17 @@ export const COLOURS = {
   primary: '#FF6767',
   primaryTap: '#C97698',
   secondary: '#C97698',
-  specialText: '#c9ffe8',
+  specialText: '#8ffdff',
   body: '#ffefeb',
   text: '#3a353b',
-  background: '#ffcec2',
+  background: '#fac4b6',
   light: 'white'
 }
 
 const { primary, body, primaryTap } = COLOURS
 
 export const fontSizeBase = 14
-export const radiusBase = 20
+export const radiusBase = 15
 export const lineHeight = 20
 export const brandShadow = {
   shadowOffset: { width: 1, height: 1 },

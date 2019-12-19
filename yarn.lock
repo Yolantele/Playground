@@ -6330,6 +6330,11 @@ react-native-drawer-layout@~1.3.0:
   dependencies:
     react-native-dismiss-keyboard "1.0.0"
 
+react-native-flip-timer@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-flip-timer/-/react-native-flip-timer-0.0.4.tgz#84372d53e9b558cf5819a4be12a963b26b15a17f"
+  integrity sha512-B66rH9Qp08vmSUBe9r19p4S/tTu3cF7vRegfbbwF3+Nxdza66eak2q2aqRXvBNIUE0cMCrJna5GYdnUFZ9Q9og==
+
 react-native-gesture-handler@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.5.0.tgz#df7dc5285c152e0656db70f55200fa632c4f45af"
@@ -6352,6 +6357,11 @@ react-native-keyboard-aware-scroll-view@^0.9.1:
   dependencies:
     prop-types "^15.6.2"
     react-native-iphone-x-helper "^1.0.3"
+
+react-native-linear-gradient@^2.5.6:
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.5.6.tgz#96215cbc5ec7a01247a20890888aa75b834d44a0"
+  integrity sha512-HDwEaXcQIuXXCV70O+bK1rizFong3wj+5Q/jSyifKFLg0VWF95xh8XQgfzXwtq0NggL9vNjPKXa016KuFu+VFg==
 
 react-native-menu@^0.23.0:
   version "0.23.0"

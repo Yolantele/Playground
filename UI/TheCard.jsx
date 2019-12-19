@@ -1,6 +1,6 @@
 import { Card } from '@ant-design/react-native'
-import { TouchableOpacity } from 'react-native'
 import React from 'react'
+import { TouchableOpacity } from 'react-native'
 import { brandShadow } from '../customTheme'
 
 const { Body, Header } = Card
@@ -10,7 +10,7 @@ const cardStyle = {
   padding: 30,
   paddingTop: 5,
   minHeight: 150,
-  margin: 5
+  marginVertical: 5
 }
 
 const TheCard = ({ height, children, title }) => (

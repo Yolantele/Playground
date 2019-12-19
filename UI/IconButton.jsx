@@ -28,6 +28,7 @@ const IconButton = ({ icon = 'audio', size = 30, colour = COLOURS.primary, fille
     ) : (
       <IconOutline name={icon} size={size} color={colour} style={iconStyle} />
     )}
+    {children}
   </TouchableOpacity>
 )
 

@@ -7,8 +7,7 @@ const styles = StyleSheet.create({
   quotes: {
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
-    margin: '10%'
+    alignItems: 'center'
   },
   quoteStyle: {
     flex: 1,

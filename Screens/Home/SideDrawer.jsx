@@ -1,9 +1,9 @@
 import { Button, Drawer, List } from '@ant-design/react-native'
-import { IconFill, IconOutline } from '@ant-design/icons-react-native'
 import React, { useState } from 'react'
 import { ScrollView, View } from 'react-native'
 
 import { COLOURS } from '../../customTheme'
+import { IconOutline } from '@ant-design/icons-react-native'
 import { TheText } from '../../UI'
 
 const ITEMS = ['My Sprint', 'Landmarks', 'Tribe Feed']
@@ -17,7 +17,7 @@ const drawerRowStyle = {
 const { Item } = List
 
 const SideDrawer = ({ children, items = ITEMS }) => {
-  const [drawer, setDrawer] = useState(false)
+  const [openDrawer, setDrawer] = useState(true)
 
   const SideBar = () => (
     <ScrollView style={{ flex: 1 }}>
@@ -37,6 +37,11 @@ const SideDrawer = ({ children, items = ITEMS }) => {
             </View>
           </Item>
         ))}
+        <Button
+          style={{ width: 100, marginTop: 10 }}
+          onPress={() => setDrawer(openDrawer ? true : false)}>
+          Menu
+        </Button>
       </List>
     </ScrollView>
   )
@@ -45,9 +50,14 @@ const SideDrawer = ({ children, items = ITEMS }) => {
     <Drawer
       sidebar={<SideBar />}
       position="left"
-      // open={drawer}
+      open={openDrawer}
       // onOpenChange={() => setDrawer(true)}
       drawerBackgroundColor={COLOURS.body}>
+      <Button
+        style={{ width: 100, marginTop: 10 }}
+        onPress={() => setDrawer(openDrawer ? true : false)}>
+        Menu
+      </Button>
       {children}
     </Drawer>
   )
