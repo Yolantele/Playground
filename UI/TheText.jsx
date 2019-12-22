@@ -3,7 +3,21 @@ import React, { useEffect, useState } from 'react'
 import { StyleSheet, Text } from 'react-native'
 
 const MAX_FONT_SIZE = 20
-const TheText = ({ children, bold, light, large, small, xl, xxl, color, centered, ...rest }) => {
+
+const TheText = ({
+  children,
+  bold,
+  light,
+  large,
+  small,
+  xl,
+  xxl,
+  xxxl,
+  color,
+  centered,
+  style,
+  ...rest
+}) => {
   const { text } = styles
   const [fontSize, setFontSize] = useState(fontSizeBase)
 
@@ -12,6 +26,7 @@ const TheText = ({ children, bold, light, large, small, xl, xxl, color, centered
     if (small) setFontSize(fontSizeBase - 2)
     if (xl) setFontSize(fontSizeBase * 1.5)
     if (xxl) setFontSize(fontSizeBase * 2)
+    if (xxxl) setFontSize(fontSizeBase * 3.5)
   }, [])
 
   const fontWeight = () => {
@@ -28,7 +43,8 @@ const TheText = ({ children, bold, light, large, small, xl, xxl, color, centered
         fontWeight: fontWeight(),
         lineHeight: fontSize * 1.5,
         color,
-        textAlign: centered ? 'center' : 'justify'
+        textAlign: centered ? 'center' : 'justify',
+        ...style
       }}
       onLongPress={() => fontSize < MAX_FONT_SIZE && setFontSize(fontSize + 4)}
       {...rest}>

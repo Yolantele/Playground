@@ -1,49 +1,51 @@
-import { Button, Drawer, List } from '@ant-design/react-native'
+import { COLOURS, brandGlow, brandShadow } from '../../customTheme'
+import { Drawer, List } from '@ant-design/react-native'
+import { IconButton, TheText } from '../../UI'
 import React, { useState } from 'react'
-import { ScrollView, View } from 'react-native'
 
-import { COLOURS } from '../../customTheme'
 import { IconOutline } from '@ant-design/icons-react-native'
-import { TheText } from '../../UI'
+import LinearGradient from 'react-native-linear-gradient'
+import { View } from 'react-native'
+import styles from './styles'
 
 const ITEMS = ['My Sprint', 'Landmarks', 'Tribe Feed']
-
-const drawerRowStyle = {
-  flexDirection: 'row',
-  justifyContent: 'flex-start',
-  alignItems: 'center'
-}
-
+const { light, background, secondary, primary } = COLOURS
+const { drawerRow } = styles
 const { Item } = List
 
+const GloLogo = () => (
+  <TheText bold large color={light} style={{ ...brandGlow, ...brandShadow }}>
+    Glo
+  </TheText>
+)
 const SideDrawer = ({ children, items = ITEMS }) => {
-  const [openDrawer, setDrawer] = useState(true)
+  const [openDrawer, setDrawer] = useState(false)
 
   const SideBar = () => (
-    <ScrollView style={{ flex: 1 }}>
+    <LinearGradient colors={[light, background]} style={{ flex: 1 }}>
       <List>
-        <Item>
-          <View style={drawerRowStyle}>
-            <TheText bold>Glo</TheText>
-          </View>
-        </Item>
-        {items.map((item, index) => (
-          <Item key={index}>
-            <View style={drawerRowStyle}>
-              <IconOutline name="smile" size={30} style={{ margin: 10, color: COLOURS.primary }} />
-              <TheText>
-                {item} - {index}
+        <View>
+          <Item style={{ backgroundColor: primary }}>
+            <View style={{ ...drawerRow, justifyContent: 'space-between' }}>
+              <GloLogo />
+              <TheText bold large color={light} onPress={() => setDrawer(false)}>
+                close
               </TheText>
             </View>
           </Item>
-        ))}
-        <Button
-          style={{ width: 100, marginTop: 10 }}
-          onPress={() => setDrawer(openDrawer ? true : false)}>
-          Menu
-        </Button>
+          {items.map((item, index) => (
+            <Item key={index}>
+              <View style={drawerRow}>
+                <IconOutline name="smile" size={30} style={{ margin: 10, color: secondary }} />
+                <TheText xl color={secondary}>
+                  - {item && item.toUpperCase()}
+                </TheText>
+              </View>
+            </Item>
+          ))}
+        </View>
       </List>
-    </ScrollView>
+    </LinearGradient>
   )
 
   return (
@@ -51,13 +53,8 @@ const SideDrawer = ({ children, items = ITEMS }) => {
       sidebar={<SideBar />}
       position="left"
       open={openDrawer}
-      // onOpenChange={() => setDrawer(true)}
       drawerBackgroundColor={COLOURS.body}>
-      <Button
-        style={{ width: 100, marginTop: 10 }}
-        onPress={() => setDrawer(openDrawer ? true : false)}>
-        Menu
-      </Button>
+      <IconButton icon={'menu'} width={50} onPress={() => setDrawer(true)} />
       {children}
     </Drawer>
   )

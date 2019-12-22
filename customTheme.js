@@ -2,7 +2,7 @@ export const COLOURS = {
   primary: '#FF6767',
   primaryTap: '#C97698',
   secondary: '#C97698',
-  specialText: '#8ffdff',
+  specialText: 'darkcyan',
   body: '#ffefeb',
   text: '#3a353b',
   background: '#fac4b6',
@@ -26,6 +26,7 @@ export const brandGlow = {
   shadowOpacity: 0.5,
   shadowRadius: 7
 }
+
 export const customTheme = {
   color_text_base: '#4c474d',
   color_text_base_inverse: '#f5f0f0',

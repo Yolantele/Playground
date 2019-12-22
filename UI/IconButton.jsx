@@ -21,8 +21,16 @@ const buttonStyle = {
   ...brandShadow,
   ...brandGlow
 }
-const IconButton = ({ icon = 'audio', size = 30, colour = COLOURS.primary, filled, children }) => (
-  <TouchableOpacity style={buttonStyle}>
+const IconButton = ({
+  icon = 'audio',
+  size = 30,
+  colour = COLOURS.primary,
+  filled,
+  children,
+  width,
+  onPress
+}) => (
+  <TouchableOpacity style={{ ...buttonStyle, width }} onPress={onPress}>
     {filled ? (
       <IconFill name={icon} size={size} color={colour} style={iconStyle} />
     ) : (

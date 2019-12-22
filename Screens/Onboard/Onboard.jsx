@@ -10,7 +10,7 @@ import { ONBOARD } from '../../Assets/Images'
 import { TheText } from '../../UI'
 import styles from './Style'
 
-const { secondary, specialText } = COLOURS
+const { secondary, specialText, light } = COLOURS
 const { IMG1, IMG2, IMG3, IMG4, IMG5, IMG6, IMG7, IMG8, IMG9 } = ONBOARD
 
 const Onboard = ({ navigation }) => {
@@ -193,7 +193,7 @@ const Onboard = ({ navigation }) => {
       <ScrollView style={container} showsHorizontalScrollIndicator={false} snapToStart={true}>
         <View style={view}>
           <Animated.View style={{ ...view, opacity: animatedValue }}>
-            <TheText bold xxl color={'white'} centered>
+            <TheText bold xxl color={light} centered>
               {header && header}
             </TheText>
             <IconFill
