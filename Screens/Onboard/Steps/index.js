@@ -1,4 +1,4 @@
-export { default as Base } from './Base'
+export { default as Core } from './Core'
 export { default as Bonuses } from './Bonuses'
 export { default as Rules } from './Rules'
 export { default as Dailies } from './Dailies'

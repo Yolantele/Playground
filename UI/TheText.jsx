@@ -1,4 +1,4 @@
-import { COLOURS, fontSizeBase, lineHeight } from '../customTheme'
+import { COLOURS, fontSizeBase, brandShadow, brandGlow } from '../customTheme'
 import React, { useEffect, useState } from 'react'
 import { StyleSheet, Text } from 'react-native'
 
@@ -35,6 +35,7 @@ const TheText = ({
     return '400'
   }
 
+  const shadow = fontSize > fontSizeBase + 2 ? brandGlow : null
   return (
     <Text
       style={{
@@ -44,11 +45,11 @@ const TheText = ({
         lineHeight: fontSize * 1.5,
         color,
         textAlign: centered ? 'center' : 'justify',
-        ...style
+        ...style,
+        ...shadow
       }}
       onLongPress={() => fontSize < MAX_FONT_SIZE && setFontSize(fontSize + 4)}
-      {...rest}
-    >
+      {...rest}>
       {children}
     </Text>
   )

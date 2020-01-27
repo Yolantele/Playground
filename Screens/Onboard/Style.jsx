@@ -3,13 +3,12 @@ import { brandShadow, brandGlow } from '../../customTheme'
 
 const styles = StyleSheet.create({
   container: {
-    marginVertical: '5%',
     marginHorizontal: '2%'
   },
   backImage: { width: '100%', height: '100%' },
   section: {
-    marginTop: 20,
-    marginBottom: 20
+    marginVertical: 20,
+    width: '100%'
   },
   view: {
     flex: 1,

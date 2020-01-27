@@ -14,13 +14,10 @@ const Dailies = ({ setDailies, resetDailies, setValue, value, dailies, next }) =
   return (
     <View style={styles.section}>
       <TheText xl bold centered color={specialText}>
-        Complete each DAILY task once a day!
-      </TheText>
-      <TheText bold large centered color={specialText}>
-        Each completed DAILY earns 2 Glos a day
+        {`Choose ${MAX_DAILIES} Dailies:`}
       </TheText>
       <OneLineInput
-        head='Type in DAILY items:'
+        head='Type in here:'
         action={() => setDailies(value)}
         onChange={val => setValue(val)}
         disabled={dailies.length === MAX_DAILIES || value === ''}
@@ -28,8 +25,8 @@ const Dailies = ({ setDailies, resetDailies, setValue, value, dailies, next }) =
         value={value}
         placeholder={
           dailies.length === MAX_DAILIES
-            ? `The max of ${MAX_DAILIES} DAILIES added!`
-            : 'Add your own DALIES here...'
+            ? `The max of ${MAX_DAILIES} Dailies added!`
+            : 'My Dailies here...'
         }
       />
       {dailies.length ? (
@@ -62,29 +59,31 @@ const Dailies = ({ setDailies, resetDailies, setValue, value, dailies, next }) =
       <WhiteSpace size='xl' />
       {dailies.length < MAX_DAILIES ? (
         <>
-          <TheText centered>Or choose any from Examples bellow:</TheText>
+          <TheText centered bold large color='white'>
+            - OR -
+          </TheText>
+          <TheText centered large style={{ margin: 10 }}>
+            Choose from given Examples:
+          </TheText>
           {DAILIES.map((dailie, i) => (
-            <>
+            <View key={i}>
               {!dailies.includes(dailie) && (
-                <Button
-                  onPress={() => onChooseDailies(dailie)}
-                  style={styles.buttonStyle}
-                  key={`dailies-examples-${i}`}>
+                <Button onPress={() => onChooseDailies(dailie)} style={styles.buttonStyle}>
                   <TheText bold color={secondary} onPress={() => onChooseDailies(dailie)}>
                     {dailie}
                   </TheText>
                 </Button>
               )}
-            </>
+            </View>
           ))}
         </>
       ) : (
         <>
           <TheText xl bold centered color={specialText}>
-            You have chosen {MAX_DAILIES} DALIES to complete once a day ! 💃🏻
+            You chose maximum Dailies! 🎉
           </TheText>
-          <TheText large bold centered color={specialText}>
-            Next on , let's set any BONUS 💥 you want to complete at least once a week!
+          <TheText large bold centered>
+            Next, choose the BONUS! 💥
           </TheText>
           <WhiteSpace size='xl' />
           <Button onPress={next}>

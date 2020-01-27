@@ -9,7 +9,7 @@ const cardStyle = {
   padding: 20,
   paddingTop: 5,
   minHeight: 150,
-  marginVertical: 5,
+  marginVertical: 10,
   opacity: 0.9
 }
 

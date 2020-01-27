@@ -60,7 +60,7 @@ const Why = ({ nextSection }) => {
           placeHold='my common pitfalls...'
         />
       ),
-      buttonText: 'Brainstorm Solutions 💃🏻>'
+      buttonText: 'Brainstorm Solutions 🤓>'
     },
     {
       title: 'What can you set in place?',

@@ -20,14 +20,14 @@ const Intro = ({ next, goHome }) => (
     <WhiteSpace size='lg' />
     {[
       { text: 'Set Your WHY! 🤸🏻‍', action: () => next(1) },
-      { text: 'Skip to Glo Sprint 🏁', action: () => next(2) }
+      { text: 'Skip to Glo Sprint 🏁', action: () => next(2), type: 'ghost' }
     ].map(({ text, action, type }, i) => (
       <Button
         type={type && type}
         style={{ ...styles.buttonStyle, margin: 10 }}
         onPress={action}
         key={`buttons-${i}`}>
-        <TheText bold xl color={COLOURS.secondary} onPress={action}>
+        <TheText bold large color={COLOURS.secondary} onPress={action}>
           {text}
         </TheText>
       </Button>

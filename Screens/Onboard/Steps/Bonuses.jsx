@@ -16,13 +16,10 @@ const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
   return (
     <View style={styles.section}>
       <TheText xl bold centered color={specialText}>
-        Complete each BONUS task at least once a week!
-      </TheText>
-      <TheText large bold centered color={specialText}>
-        Earns 2 Glos each
+        {`Choose your Bonus to complete in the Glo sprint:`}
       </TheText>
       <OneLineInput
-        head='Type in Weekly BONUS items:'
+        head='Type in here:'
         action={() => setBonus(value)}
         onChange={val => setValue(val)}
         disabled={bonuses.lenght === MAX_BONUS || value === ''}
@@ -31,13 +28,13 @@ const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
         placeholder={
           bonuses.length === MAX_BONUS
             ? `You have added the max ${MAX_BONUS} BONUSE`
-            : 'Create your own BONUS here...'
+            : 'My Bonus is...'
         }
       />
       <View style={styles.card}>
         <TheCard>
           <TheText bold large color={secondary}>
-            Once a Week:
+            My Bonus is:
           </TheText>
           <WhiteSpace />
           {bonuses && bonuses.length
@@ -64,35 +61,36 @@ const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
       <WhiteSpace size='lg' />
       {bonuses.length < MAX_BONUS ? (
         <>
-          <TheText centered>Or choose any from Examples bellow:</TheText>
+          <TheText centered bold large color='white'>
+            - OR -
+          </TheText>
+          <TheText centered large style={{ margin: 10 }}>
+            Choose given Examples :
+          </TheText>
           {BONUS.map((bon, i) => (
-            <>
+            <View key={i}>
               {!bonuses.includes(bon) && (
-                <Button
-                  key={i}
-                  style={styles.buttonStyle}
-                  key={i}
-                  onPress={() => onChooseBonus(bon)}>
+                <Button style={styles.buttonStyle} key={i} onPress={() => onChooseBonus(bon)}>
                   <TheText large bold color={secondary} onPress={() => onChooseBonus(bon)}>
                     {bon}
                   </TheText>
                 </Button>
               )}
-            </>
+            </View>
           ))}
         </>
       ) : (
         <>
           <TheText xl bold centered color={specialText}>
-            You have chosen the max number of BONUS items, whoa !
+            You chose your BONUS items, whoa !
           </TheText>
-          <TheText large bold centered color={specialText}>
-            Lets see how many Glos you can collect during this sprint!
+          <TheText large bold centered>
+            Lets see what your Glo Sprint looks like
           </TheText>
           <WhiteSpace sixe='xl' />
-          <Button onPress={next}>
+          <Button onPress={next} style={{ margin: 10 }}>
             <TheText large bold color={secondary} onPress={next}>
-              Let't go 💥
+              See Overview
             </TheText>
           </Button>
         </>

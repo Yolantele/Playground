@@ -11,7 +11,7 @@ export const COLOURS = {
 
 const { primary, body, primaryTap } = COLOURS
 
-export const fontSizeBase = 14
+export const fontSizeBase = 16
 export const radiusBase = 15
 export const lineHeight = 20
 export const brandShadow = {
@@ -31,7 +31,7 @@ export const customTheme = {
   color_text_base: '#4c474d',
   color_text_base_inverse: '#f5f0f0',
   color_text_secondary: '#a4a9b0',
-  color_text_placeholder: '#5f4e6e',
+  color_text_placeholder: '#251d2b',
   color_text_disabled: '#5f4e6e',
   color_text_caption: '#888888',
   color_text_paragraph: '#413a42',

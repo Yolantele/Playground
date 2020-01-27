@@ -9,18 +9,15 @@ import styles from '../Style'
 
 const { secondary, specialText, white } = COLOURS
 
-const Base = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => {
+const Core = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => {
   const onChooseBase = each => !base.includes(each) && setBaseItems(each)
   return (
     <View style={styles.section}>
       <TheText xl bold centered color={specialText}>
-        Set core activity to tick-off each day:
-      </TheText>
-      <TheText large centered color={specialText}>
-        Successfully acomplishing the core activity earns 5 Glo points
+        Choose your Core focus:
       </TheText>
       <OneLineInput
-        head='Type in Core activity here:'
+        head='Type in here:'
         action={() => setBaseItems(value)}
         onChange={val => setValue(val)}
         disabled={base.length === MAX_BASE || value === ''}
@@ -35,12 +32,12 @@ const Base = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => 
       <View style={styles.card}>
         <TheCard>
           <TheText bold large color={secondary}>
-            Throughout the day:
+            My Core focus for Glo Sprint is:
           </TheText>
           <WhiteSpace />
           {base && base.length
             ? base.map((each, i) => (
-                <View style={styles.rowButton} key={`base-${i}`}>
+                <View style={styles.rowButton} key={`base-item-${i}`}>
                   <TheText bold large centered color={secondary}>
                     {i + 1} - {each}
                   </TheText>
@@ -63,40 +60,34 @@ const Base = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => 
       <WhiteSpace size='lg' />
       {base.length < MAX_BASE ? (
         <>
-          <TheText centered bold large>
+          <TheText centered bold large color='white'>
             - OR -
           </TheText>
-
           <TheText large centered style={{ margin: 10 }}>
-            Choose from the examples:
+            Choose given Examples:
           </TheText>
           {CORE.map((each, i) => (
-            <>
+            <View key={'core' + i}>
               {!base.includes(each) && (
-                <Button
-                  style={styles.buttonStyle}
-                  key={`base-items-${i}`}
-                  onPress={() => onChooseBase(each)}>
+                <Button style={styles.buttonStyle} onPress={() => onChooseBase(each)}>
                   <TheText bold large color={secondary} onPress={() => onChooseBase(each)}>
                     {each}
                   </TheText>
                 </Button>
               )}
-            </>
+            </View>
           ))}
         </>
       ) : (
         <>
           <TheText xl bold centered color={specialText}>
-            {`You have chosen ${MAX_BASE} Core activit${
-              MAX_BASE > 1 ? 'y' : 'ies'
-            } for each day 👏🎬`}
+            {`You chose Your Core!`}
           </TheText>
           <TheText large bold centered color={white}>
-            {`Next, set ${MAX_DAILIES} daily tasks you want to complete each day 🙌`}
+            {`Next step, choose ${MAX_DAILIES} dailies! 🙌`}
           </TheText>
           <WhiteSpace sixe='xl' />
-          <Button onPress={next}>
+          <Button onPress={next} style={{ margin: 10 }}>
             <TheText large bold color={secondary} onPress={next}>
               Set DAILIES 📅>
             </TheText>
@@ -107,4 +98,4 @@ const Base = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => 
   )
 }
 
-export default Base
+export default Core

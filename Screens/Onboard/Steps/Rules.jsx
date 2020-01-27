@@ -8,19 +8,18 @@ import styles from '../Style'
 const RULES = [
   {
     head: '1 - CORE 🏠',
-    text: '1 Key Activity or a way of Being central to your Glo Sprint',
-    ex:
-      'for example "natural sugars only", "no smoking", "mindul and present throughout day" or similar '
+    text: 'Choose Key Intention for your Glo Sprint',
+    ex: 'Examples: "natural sugars only", "no smoking", "mindful and present throughout day"'
   },
   {
     head: '2 - DAILIES 📅',
-    text: '3 tasks to complete each day',
-    ex: 'for example "meditate 15 min", "drink 2L of water" ect. '
+    text: 'Choose 3 Tasks to complete each day',
+    ex: 'Examples: "meditate 15 min", "drink 2L of water" '
   },
   {
     head: '3 - BONUS 🔥',
-    text: '1 bonus activity during the sprint to boost the Glo points',
-    ex: 'for example "spa day", "cleansing/fasting day" ect.'
+    text: 'Choose 1 Bonus Activity to complete over the Glo Sprint',
+    ex: 'Examples: "spa day", "cleansing/fasting day"'
   }
 ]
 
@@ -30,15 +29,13 @@ const Rules = ({ next }) => (
   <View style={styles.section}>
     {RULES.map((each, i) => (
       <View style={{ margin: 10 }} key={`rules-${i}`}>
-        <TheText xl bold centered color={specialText}>
+        <TheText xl bold centered color='white'>
           {each.head}
         </TheText>
-        <TheText xl bold centered color='white'>
+        <TheText large bold centered color={specialText}>
           {each.text}
         </TheText>
-        <TheText centered color='white'>
-          {each.ex}
-        </TheText>
+        <TheText centered>{each.ex}</TheText>
       </View>
     ))}
     <Button style={styles.buttonStyle} onPress={next}>
