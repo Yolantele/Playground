@@ -2,7 +2,7 @@ export const COLOURS = {
   primary: '#FF6767',
   primaryTap: '#C97698',
   secondary: '#C97698',
-  specialText: 'darkcyan',
+  specialText: '#d92384',
   body: '#ffefeb',
   text: '#3a353b',
   background: '#fac4b6',
@@ -96,7 +96,7 @@ export const customTheme = {
   actionsheet_item_height: 50,
   actionsheet_item_font_size: 18,
 
-  //button
+  // button
   button_height: 47,
   button_font_size: 18,
 
@@ -131,12 +131,12 @@ export const customTheme = {
   input_color_icon: '#cccccc',
   input_color_icon_tap: primary,
 
-  //tabs
+  // tabs
   tabs_color: primary,
   tabs_height: 42,
   tabs_font_size_heading: 15,
 
-  //segmented_control
+  // segmented_control
   segmented_control_color: primary,
   segmented_control_height: 27,
   segmented_control_fill_tap: `${primary}10`,
@@ -148,7 +148,7 @@ export const customTheme = {
   // toast
   toast_fill: 'rgba(0, 0, 0, .8)',
 
-  //search_bar
+  // search_bar
   search_bar_fill: '#efeff4',
   search_bar_height: 44,
   search_bar_input_height: 28,

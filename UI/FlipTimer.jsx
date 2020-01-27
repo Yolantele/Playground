@@ -14,7 +14,7 @@ const styles = {
 const FlipTimer = () => {
   return (
     <View style={styles.container}>
-      <Timer time={500} play={true} />
+      <Timer time={500} play />
       {/* <FlipNumber /> */}
     </View>
   )

@@ -14,87 +14,76 @@ const Why = ({ nextSection }) => {
   const [subStep, setSubStep] = useState(0)
 
   const changeSection = () => {
-    if (subStep === steps.length + 1) {
-      nextSection()
-    } else {
-      setSubStep(subStep + 1)
-    }
+    if (subStep === steps.length + 1) nextSection()
+    else setSubStep(subStep + 1)
   }
 
   const steps = [
     {
-      title: 'A strong enough reason to embark on this journey',
-      sub: `'I want to look like that girl on instagram' - may not be the strongest of reasons 😉`,
+      title: 'Your Reason to embark on the Glo Sprint',
+      sub: 'Try a few and pick the most inspiring one that makes you feel really excited!',
       content: (
-        <>
-          <TextareaItem
-            style={{ margin: 10, borderRadius: radiusBase }}
-            maxLength={100}
-            clear
-            value={why.myWhy}
-            onChange={myWhy => setWhy({ ...why, myWhy })}
-            placeholder={'Note your reason here...'}
-            rows={6}
-          />
-          <TheText large color={light}>
-            We will use your Why note as the Reminder during the Glo Sprint
-          </TheText>
-          <WhiteSpace size="lg" />
-        </>
+        <GoalForm
+          label='Why do you want to do it?'
+          val={why.myWhy}
+          onChange={myWhy => setWhy({ ...why, myWhy })}
+          foot='We will remind you of your WHY soon 😉'
+          placeHold='my reason...'
+        />
       ),
       buttonText: 'Go to My Goal >'
     },
     {
-      title: 'what do you want to achieve over the duration of the sprint?',
-      sub: ``,
+      title: 'What do you want to achieve over the long haul? ',
+      sub: "What is the Big and Measurable Goal? Ex: 'I want to be so radiant, people notice it'",
       content: (
         <GoalForm
-          label={'What is your goal for the next {sprint days} days?'}
+          label='What is your Measurable Goal?'
           val={why.goal}
           onChange={goal => setWhy({ ...why, goal })}
-          foot={'We will use your Goal note as the Reminder during the Glo Sprint'}
-          placeHold={'Note your goal here...'}
+          foot='We will remind you of the Goal soon 👍'
+          placeHold='my goal...'
         />
       ),
       buttonText: 'Map Pitfalls 😖>'
     },
     {
       title: 'What are your common Pitfalls?',
-      sub: `Binge eating? Giving up before it took off? Running out of time for yourself? Think hard to capture what are your common sabotagers...`,
+      sub:
+        'Emotional eating? Running out of time? - Think what all the common saboteurs are for you...',
       content: (
         <GoalForm
-          label={'What are your common Pitfalls ?'}
-          val={why.commonPitfalls}
+          label='What are your common Pitfalls ?'
+          val={why.pitfalls}
           onChange={pitfalls => setWhy({ ...why, pitfalls })}
-          foot={'Did you note them all? The more the better'}
-          placeHold={'Note your common Pitfalls here...'}
+          foot='Make sure to catch them all'
+          placeHold='my common pitfalls...'
         />
       ),
       buttonText: 'Brainstorm Solutions 💃🏻>'
     },
     {
       title: 'What can you set in place?',
-      sub: `Now that you are aware of your common pitfalls, lets brainstorm some ideas to combat each blocker! `,
+      sub:
+        'Now that you are aware of your common pitfalls, lets brainstorm some ideas to combat each blocker! ',
       content: (
         <>
           {why.pitfalls && why.pitfalls.length ? (
             <TheCard>
-              <TheText bold large>
+              <TheText bold large centered>
                 My Common Pitfalls are:
               </TheText>
+              <WhiteSpace size='lg' />
               <TheText large>{why.pitfalls}</TheText>
             </TheCard>
           ) : null}
-          <WhiteSpace size="lg" />
-          <TheText xl centered bold color={specialText}>
-            What could be the solutions to counter-act the Pitfalls
-            {why.pitfalls && why.pitfalls.length ? 'listed above:' : '?'}
-          </TheText>
+          <WhiteSpace size='lg' />
           <GoalForm
+            label={'What could be the solutions to counter-act the Pitfalls ?'}
             val={why.solutions}
             onChange={solutions => setWhy({ ...why, solutions })}
-            foot={'This step should help you customise your Glow journey next!'}
-            placeHold={'Note your solutions here...'}
+            foot='This should inform your setup coming next!'
+            placeHold='my solutions...'
           />
         </>
       ),
@@ -112,37 +101,34 @@ const Why = ({ nextSection }) => {
           <TheText bold xl centered color={secondary}>
             {title}
           </TheText>
-          <WhiteSpace size="lg" />
-          <TheText bold large color={secondary}>
+          <WhiteSpace size='lg' />
+          <TheText bold centered large color={secondary}>
             {sub}
           </TheText>
         </TheCard>
         {content}
         {subStep !== steps.length - 1 ? (
           <View style={styles.subStep}>
-            <Button
-              type="ghost"
-              onPress={() => nextSection()}
-              style={{ ...styles.buttonStyle, margin: 10 }}>
+            <Button type='ghost' onPress={() => nextSection()} style={styles.buttonStyle}>
               Skip
             </Button>
             <Button
               disabled={isDisabled}
               onPress={() => changeSection()}
-              style={{ ...styles.buttonStyle, margin: 10 }}>
+              style={styles.buttonStyle}>
               <TheText bold large color={secondary} onPress={() => changeSection()}>
                 {buttonText}
               </TheText>
             </Button>
           </View>
         ) : (
-          <Button onPress={() => nextSection} style={{ ...styles.buttonStyle, margin: 10 }}>
+          <Button onPress={() => nextSection} style={styles.buttonStyle}>
             <TheText bold large color={secondary} onPress={() => nextSection()}>
               Customise Sprint 💃🏻>
             </TheText>
           </Button>
         )}
-        <WhiteSpace size="xl" />
+        <WhiteSpace size='xl' />
       </View>
     </KeyboardAwareScrollView>
   )

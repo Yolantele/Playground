@@ -7,8 +7,10 @@ import { TheText } from '../UI'
 
 const OneLineInput = ({ head = '', action, disabled, onChange, title, placeholder, value }) => (
   <>
-    <WhiteSpace size="lg" />
-    <TheText centered>{head}</TheText>
+    <WhiteSpace size='lg' />
+    <TheText large centered>
+      {head}
+    </TheText>
     <InputItem
       style={{ margin: 10, marginTop: 20 }}
       maxLength={INPUT_MAX}
@@ -17,14 +19,14 @@ const OneLineInput = ({ head = '', action, disabled, onChange, title, placeholde
       onChange={onChange}
       placeholder={placeholder}
       extra={
-        <Button onPress={action} disabled={disabled}>
+        <Button onPress={action} disabled={disabled} style={{ margin: 5 }}>
           <TheText bold color={COLOURS.secondary} onPress={action}>
             {title}
           </TheText>
         </Button>
       }
     />
-    <WhiteSpace size="lg" />
+    <WhiteSpace size='lg' />
   </>
 )
 

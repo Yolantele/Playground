@@ -1,5 +1,5 @@
 import { Animated, ImageBackground, ScrollView, View } from 'react-native'
-import { Base, Bonuses, Dailies, Intro, Length, Rules, Type, Why } from './Steps'
+import { Base, Bonuses, Dailies, Intro, Rules, Why } from './Steps'
 import { Button, WhiteSpace } from '@ant-design/react-native'
 import { COLOURS, brandGlow, brandShadow } from '../../customTheme'
 import { MAX_BASE, MAX_BONUS, MAX_DAILIES } from './const'
@@ -19,8 +19,7 @@ const Onboard = ({ navigation }) => {
   const [step, setStep] = useState(0)
   const [value, setValue] = useState('')
   const [journey, setJourney] = useState({
-    Type: '',
-    Length: '',
+    length: 7,
     base: [],
     dailies: [],
     bonus: []
@@ -67,11 +66,6 @@ const Onboard = ({ navigation }) => {
     if (journey.bonus.length === MAX_BONUS) onNextStep()
   }
 
-  const setLength = sprint => {
-    setJourney({ ...journey, Length: sprint.val })
-    onNextStep()
-  }
-
   const reSetBase = newSet => {
     setJourney({ ...journey, base: newSet })
   }
@@ -84,11 +78,6 @@ const Onboard = ({ navigation }) => {
     setJourney({ ...journey, dailies: newSet })
   }
 
-  const setType = val => {
-    setJourney({ ...journey, Type: val })
-    onNextStep()
-  }
-
   const steps = [
     {
       header: 'Welcome to Glo!',
@@ -96,33 +85,20 @@ const Onboard = ({ navigation }) => {
       icon: 'fire',
       image: IMG1
     },
-
     {
-      header: 'What kind of Sprinter are you?',
-      content: <Type setType={val => setType(val)} />,
-      icon: 'rocket',
-      image: IMG2
-    },
-    {
-      header: 'How Long do you want to sprint for?',
-      content: <Length setLength={sprint => setLength(sprint)} />,
-      icon: 'dashboard',
+      header: 'What is your WHY ?',
+      content: <Why nextSection={() => setStep(step + 1)} />,
+      icon: 'edit',
       image: IMG3
     },
     {
-      header: 'What is your Big WHY ?',
-      content: <Why nextSection={() => setStep(step + 1)} />,
-      icon: 'edit',
-      image: IMG4
-    },
-    {
-      header: 'Customise your Sprint in 3 Steps & collect Glos!',
+      header: 'Start Your 7 Day Glo Sprint !',
       content: <Rules next={onNextStep} />,
       icon: 'experiment',
-      image: IMG5
+      image: IMG2
     },
     {
-      header: '1 - BASE',
+      header: '1 - CORE',
       content: (
         <Base
           setBaseItems={setBaseItems}
@@ -134,7 +110,7 @@ const Onboard = ({ navigation }) => {
         />
       ),
       icon: 'home',
-      image: IMG6
+      image: IMG4
     },
     {
       header: '2 - DAILIES',
@@ -149,12 +125,12 @@ const Onboard = ({ navigation }) => {
         />
       ),
       icon: 'rest',
-      image: IMG7
+      image: IMG5
     },
     {
       header: '3 - BONUS',
       icon: 'trophy',
-      image: IMG8,
+      image: IMG6,
       content: (
         <Bonuses
           next={onNextStep}
@@ -169,7 +145,7 @@ const Onboard = ({ navigation }) => {
     {
       header: 'Your Sprint and Glos',
       icon: 'eye',
-      image: IMG9,
+      image: IMG7,
       content: (
         <View style={styles.section}>
           <TheText xl bold centered color={specialText}>
@@ -190,29 +166,29 @@ const Onboard = ({ navigation }) => {
   const { header, icon, content, image } = steps[step]
   return (
     <ImageBackground source={image} style={backImage}>
-      <ScrollView style={container} showsHorizontalScrollIndicator={false} snapToStart={true}>
+      <ScrollView style={container} showsHorizontalScrollIndicator={false} snapToStart>
         <View style={view}>
-          <Animated.View style={{ ...view, opacity: animatedValue }}>
+          <Animated.View style={{ ...view, opacity: animatedValue, margin: 10 }}>
             <TheText bold xxl color={light} centered>
               {header && header}
             </TheText>
             <IconFill
               name={icon}
               size={45}
-              color={'white'}
+              color='white'
               style={{ ...brandGlow, ...brandShadow, margin: 20 }}
             />
           </Animated.View>
 
           {content}
           {step > 0 && (
-            <Button type="ghost" onPress={() => onPreviousStep()}>
+            <Button type='ghost' onPress={() => onPreviousStep()}>
               Go Back
             </Button>
           )}
         </View>
       </ScrollView>
-      <WhiteSpace size="xl" />
+      <WhiteSpace size='xl' />
     </ImageBackground>
   )
 }

@@ -47,7 +47,8 @@ const TheText = ({
         ...style
       }}
       onLongPress={() => fontSize < MAX_FONT_SIZE && setFontSize(fontSize + 4)}
-      {...rest}>
+      {...rest}
+    >
       {children}
     </Text>
   )

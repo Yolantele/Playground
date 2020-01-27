@@ -1,4 +1,4 @@
-import { BASE, MAX_BASE } from '../const'
+import { CORE, MAX_BASE, MAX_DAILIES } from '../const'
 import { Button, WhiteSpace } from '@ant-design/react-native'
 import { OneLineInput, TheCard, TheText } from '../../../UI'
 
@@ -7,29 +7,29 @@ import React from 'react'
 import { View } from 'react-native'
 import styles from '../Style'
 
-const { secondary, specialText } = COLOURS
+const { secondary, specialText, white } = COLOURS
 
 const Base = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => {
   const onChooseBase = each => !base.includes(each) && setBaseItems(each)
   return (
     <View style={styles.section}>
       <TheText xl bold centered color={specialText}>
-        Set the makeup of each day for the length of your Glo sprint:
+        Set core activity to tick-off each day:
       </TheText>
       <TheText large centered color={specialText}>
-        Each completed BASE earns 1 Glo a day! Glos double if all completed.
+        Successfully acomplishing the core activity earns 5 Glo points
       </TheText>
       <OneLineInput
-        head="Type in BASE items:"
+        head='Type in Core activity here:'
         action={() => setBaseItems(value)}
         onChange={val => setValue(val)}
         disabled={base.length === MAX_BASE || value === ''}
-        title="Add"
+        title='Add'
         value={value}
         placeholder={
           base.length === MAX_BASE
-            ? `You have added the max ${MAX_BASE} BASE items`
-            : 'Add your own BASE items here...'
+            ? `You have added the max ${MAX_BASE} CORE activity`
+            : 'Add your own CORE activity here...'
         }
       />
       <View style={styles.card}>
@@ -40,16 +40,16 @@ const Base = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => 
           <WhiteSpace />
           {base && base.length
             ? base.map((each, i) => (
-                <View style={styles.rowButton} key={i}>
+                <View style={styles.rowButton} key={`base-${i}`}>
                   <TheText bold large centered color={secondary}>
                     {i + 1} - {each}
                   </TheText>
                   <Button
                     style={{ width: 25 }}
-                    size="small"
-                    type="ghost"
+                    size='small'
+                    type='ghost'
                     onPress={() => {
-                      let newBase = [...base].filter(item => item !== each)
+                      const newBase = [...base].filter(item => item !== each)
                       resetBaseItems(newBase)
                     }}>
                     -
@@ -60,14 +60,23 @@ const Base = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => 
         </TheCard>
       </View>
 
-      <WhiteSpace size="lg" />
+      <WhiteSpace size='lg' />
       {base.length < MAX_BASE ? (
         <>
-          <TheText centered>Or choose any from Examples bellow:</TheText>
-          {BASE.map((each, i) => (
+          <TheText centered bold large>
+            - OR -
+          </TheText>
+
+          <TheText large centered style={{ margin: 10 }}>
+            Choose from the examples:
+          </TheText>
+          {CORE.map((each, i) => (
             <>
               {!base.includes(each) && (
-                <Button style={styles.buttonStyle} key={i} onPress={() => onChooseBase(each)}>
+                <Button
+                  style={styles.buttonStyle}
+                  key={`base-items-${i}`}
+                  onPress={() => onChooseBase(each)}>
                   <TheText bold large color={secondary} onPress={() => onChooseBase(each)}>
                     {each}
                   </TheText>
@@ -79,15 +88,17 @@ const Base = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => 
       ) : (
         <>
           <TheText xl bold centered color={specialText}>
-            You have chosen {MAX_BASE} things as the BASE makeup for each day 👏🎬
+            {`You have chosen ${MAX_BASE} Core activit${
+              MAX_BASE > 1 ? 'y' : 'ies'
+            } for each day 👏🎬`}
           </TheText>
-          <TheText large bold centered color={specialText}>
-            Next, let's set the tasks you want to complete once a day 🙌
+          <TheText large bold centered color={white}>
+            {`Next, set ${MAX_DAILIES} daily tasks you want to complete each day 🙌`}
           </TheText>
-          <WhiteSpace sixe="xl" />
+          <WhiteSpace sixe='xl' />
           <Button onPress={next}>
             <TheText large bold color={secondary} onPress={next}>
-              Set DAILIES >
+              Set DAILIES 📅>
             </TheText>
           </Button>
         </>

@@ -9,8 +9,8 @@ import SideDrawer from './SideDrawer'
 import axios from 'axios'
 import styles from './styles'
 
-//TODO:
-// 3. Add checkin buttons for BASE, DAILIES, BONUS
+// TODO:
+// 3. Add checkin buttons for CORE, DAILIES, BONUS
 // 4. Log Progress with Photos optional
 // 5. Notifications ?..
 
@@ -26,7 +26,7 @@ const QuoteSection = ({ quote }) => (
     <TheText light centered color={specialText}>
       {quote.author}
     </TheText>
-    <WhiteSpace size="xl" />
+    <WhiteSpace size='xl' />
   </View>
 )
 
@@ -77,14 +77,14 @@ const Home = ({ navigation }) => {
       <SideDrawer>
         <ScrollView contentContainerStyle={container}>
           <SprintBoard />
-          <WhiteSpace size="xl" />
+          <WhiteSpace size='xl' />
           <TheCard>
             <TheText>Card Content</TheText>
           </TheCard>
 
           <Button
             style={{ margin: 10 }}
-            type="primary"
+            type='primary'
             onPress={() => {
               setCounter(counter + 1)
               navigate('Profile', { name: 'Jane' })

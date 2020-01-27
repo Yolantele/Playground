@@ -22,16 +22,16 @@ const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
         Earns 2 Glos each
       </TheText>
       <OneLineInput
-        head="Type in Weekly BONUS items:"
+        head='Type in Weekly BONUS items:'
         action={() => setBonus(value)}
         onChange={val => setValue(val)}
         disabled={bonuses.lenght === MAX_BONUS || value === ''}
-        title="Add"
+        title='Add'
         value={value}
         placeholder={
           bonuses.length === MAX_BONUS
-            ? `You have added the max ${MAX_BONUS} BONUSES`
-            : 'Add your own BONUS here...'
+            ? `You have added the max ${MAX_BONUS} BONUSE`
+            : 'Create your own BONUS here...'
         }
       />
       <View style={styles.card}>
@@ -42,16 +42,16 @@ const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
           <WhiteSpace />
           {bonuses && bonuses.length
             ? bonuses.map((each, i) => (
-                <View style={styles.rowButton} key={i}>
+                <View style={styles.rowButton} key={`bonus-${i}`}>
                   <TheText bold large centered color={secondary}>
                     {i + 1} - {each}
                   </TheText>
                   <Button
                     style={{ width: 25 }}
-                    size="small"
-                    type="ghost"
+                    size='small'
+                    type='ghost'
                     onPress={() => {
-                      let newBonus = [...bonuses].filter(item => item !== each)
+                      const newBonus = [...bonuses].filter(item => item !== each)
                       resetBonus(newBonus)
                     }}>
                     -
@@ -61,7 +61,7 @@ const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
             : null}
         </TheCard>
       </View>
-      <WhiteSpace size="lg" />
+      <WhiteSpace size='lg' />
       {bonuses.length < MAX_BONUS ? (
         <>
           <TheText centered>Or choose any from Examples bellow:</TheText>
@@ -89,7 +89,7 @@ const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
           <TheText large bold centered color={specialText}>
             Lets see how many Glos you can collect during this sprint!
           </TheText>
-          <WhiteSpace sixe="xl" />
+          <WhiteSpace sixe='xl' />
           <Button onPress={next}>
             <TheText large bold color={secondary} onPress={next}>
               Let't go 💥

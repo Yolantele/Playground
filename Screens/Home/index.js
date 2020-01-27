@@ -1,4 +1,4 @@
 export {
-    default as Home
+  default as Home
 }
-from './Home'
+  from './Home'

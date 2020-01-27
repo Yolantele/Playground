@@ -1,8 +1,8 @@
-export const MAX_BASE = 3
+export const MAX_BASE = 1
 export const MAX_DAILIES = 3
-export const MAX_BONUS = 5
+export const MAX_BONUS = 1
 
-export const BASE = [
+export const CORE = [
   'No added Sugar 🍩',
   'Veg with each Meal 🥦',
   'Drink 2l of Water 💦',
@@ -27,15 +27,6 @@ export const BONUS = [
   'Dedicated Self-care Time 💅',
   'Long Meditation sitting',
   'Deep-clean'
-]
-
-export const RULES = [
-  {
-    head: '1 - BASE 🏠',
-    text: 'the makeup of each day for the length of your Glo Sprint'
-  },
-  { head: '2 - DALIES ⏰', text: 'complete the tasks once a day' },
-  { head: '3 - WEEK BONUS 🔥', text: 'complete a set number of tasks at least once a week' }
 ]
 
 export const SPRINT_TYPE = [

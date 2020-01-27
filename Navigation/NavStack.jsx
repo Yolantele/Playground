@@ -48,15 +48,15 @@ const NavStack = createAppContainer(
       Profile: ProfileStack,
       Checkin: CheckinStack
     },
-    //other config for tab navigator
+    // other config for tab navigator
     {
       defaultNavigationOptions: ({ navigation }) => ({
         tabBarIcon: ({ focused, horizontal, tintColor }) => {
           const { routeName } = navigation.state
           let iconName
-          if (routeName === 'Home') iconName = `home`
-          if (routeName === 'Profile') iconName = `smile`
-          if (routeName === 'Checkin') iconName = `audio`
+          if (routeName === 'Home') iconName = 'home'
+          if (routeName === 'Profile') iconName = 'smile'
+          if (routeName === 'Checkin') iconName = 'audio'
 
           return (
             <>

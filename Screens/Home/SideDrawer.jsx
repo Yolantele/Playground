@@ -33,10 +33,10 @@ const SideDrawer = ({ children, items = ITEMS }) => {
               </TheText>
             </View>
           </Item>
-          {items.map((item, index) => (
-            <Item key={index}>
+          {items.map((item, i) => (
+            <Item key={`side-${i}`}>
               <View style={drawerRow}>
-                <IconOutline name="smile" size={30} style={{ margin: 10, color: secondary }} />
+                <IconOutline name='smile' size={30} style={{ margin: 10, color: secondary }} />
                 <TheText xl color={secondary}>
                   - {item && item.toUpperCase()}
                 </TheText>
@@ -51,10 +51,10 @@ const SideDrawer = ({ children, items = ITEMS }) => {
   return (
     <Drawer
       sidebar={<SideBar />}
-      position="left"
+      position='left'
       open={openDrawer}
       drawerBackgroundColor={COLOURS.body}>
-      <IconButton icon={'menu'} width={50} onPress={() => setDrawer(true)} />
+      <IconButton icon='menu' width={50} onPress={() => setDrawer(true)} />
       {children}
     </Drawer>
   )

@@ -1,6 +1,5 @@
 export { default as Base } from './Base'
 export { default as Bonuses } from './Bonuses'
-export { default as Type } from './Type'
 export { default as Rules } from './Rules'
 export { default as Dailies } from './Dailies'
 export { default as Length } from './Length'

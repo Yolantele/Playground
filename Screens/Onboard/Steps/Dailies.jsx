@@ -20,11 +20,11 @@ const Dailies = ({ setDailies, resetDailies, setValue, value, dailies, next }) =
         Each completed DAILY earns 2 Glos a day
       </TheText>
       <OneLineInput
-        head={'Type in DAILY items:'}
+        head='Type in DAILY items:'
         action={() => setDailies(value)}
         onChange={val => setValue(val)}
         disabled={dailies.length === MAX_DAILIES || value === ''}
-        title={'Add'}
+        title='Add'
         value={value}
         placeholder={
           dailies.length === MAX_DAILIES
@@ -40,16 +40,16 @@ const Dailies = ({ setDailies, resetDailies, setValue, value, dailies, next }) =
             </TheText>
             <WhiteSpace />
             {dailies.map((each, i) => (
-              <View style={styles.rowButton} key={i}>
+              <View style={styles.rowButton} key={`dailies-${i}`}>
                 <TheText bold large centered color={secondary}>
                   {i + 1} - {each}
                 </TheText>
                 <Button
                   style={{ width: 25 }}
-                  size="small"
-                  type="ghost"
+                  size='small'
+                  type='ghost'
                   onPress={() => {
-                    let newDalies = [...dailies].filter(item => item !== each)
+                    const newDalies = [...dailies].filter(item => item !== each)
                     resetDailies(newDalies)
                   }}>
                   -
@@ -59,14 +59,17 @@ const Dailies = ({ setDailies, resetDailies, setValue, value, dailies, next }) =
           </TheCard>
         </View>
       ) : null}
-      <WhiteSpace size="xl" />
+      <WhiteSpace size='xl' />
       {dailies.length < MAX_DAILIES ? (
         <>
           <TheText centered>Or choose any from Examples bellow:</TheText>
           {DAILIES.map((dailie, i) => (
             <>
               {!dailies.includes(dailie) && (
-                <Button onPress={() => onChooseDailies(dailie)} style={styles.buttonStyle} key={i}>
+                <Button
+                  onPress={() => onChooseDailies(dailie)}
+                  style={styles.buttonStyle}
+                  key={`dailies-examples-${i}`}>
                   <TheText bold color={secondary} onPress={() => onChooseDailies(dailie)}>
                     {dailie}
                   </TheText>
@@ -83,7 +86,7 @@ const Dailies = ({ setDailies, resetDailies, setValue, value, dailies, next }) =
           <TheText large bold centered color={specialText}>
             Next on , let's set any BONUS 💥 you want to complete at least once a week!
           </TheText>
-          <WhiteSpace size="xl" />
+          <WhiteSpace size='xl' />
           <Button onPress={next}>
             <TheText bold color={secondary} onPress={next}>
               Set BONUS >
