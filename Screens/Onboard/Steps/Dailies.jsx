@@ -86,8 +86,8 @@ const Dailies = ({ setDailies, resetDailies, setValue, value, dailies, next }) =
             Next, choose the BONUS! 💥
           </TheText>
           <WhiteSpace size='xl' />
-          <Button onPress={next}>
-            <TheText bold color={secondary} onPress={next}>
+          <Button onPress={next} type='primary'>
+            <TheText bold onPress={next}>
               Set BONUS >
             </TheText>
           </Button>

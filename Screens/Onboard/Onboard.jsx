@@ -1,5 +1,5 @@
 import { Animated, ImageBackground, ScrollView, View } from 'react-native'
-import { Core, Bonuses, Dailies, Intro, Rules, Why } from './Steps'
+import { Core, Bonuses, Dailies, Intro, Rules, Why, Overview } from './Steps'
 import { Button, WhiteSpace } from '@ant-design/react-native'
 import { COLOURS, brandGlow, brandShadow } from '../../customTheme'
 import { MAX_BASE, MAX_BONUS, MAX_DAILIES } from './const'
@@ -10,18 +10,8 @@ import { ONBOARD } from '../../Assets/Images'
 import { TheText } from '../../UI'
 import styles from './Style'
 
-const { secondary, specialText, light } = COLOURS
-const { IMG1, IMG2, IMG3, IMG4, IMG5, IMG6, IMG7, IMG8, IMG9 } = ONBOARD
-const borderStyle = {
-  borderBottomWidth: 1,
-  width: 200,
-  alignSelf: 'center',
-  margin: 20,
-  borderColor: 'white',
-  ...brandGlow
-}
-
-const BorderSpace = () => <View style={borderStyle} />
+const { light } = COLOURS
+const { IMG1, IMG2, IMG3, IMG4, IMG5, IMG6, IMG7, IMG8 } = ONBOARD
 
 const Onboard = ({ navigation }) => {
   const animatedValue = new Animated.Value(0)
@@ -35,10 +25,13 @@ const Onboard = ({ navigation }) => {
     bonus: []
   })
 
+  const { container, backImage, view } = styles
+  const { navigate } = navigation
+
   const onAnimate = () => {
     Animated.timing(animatedValue, {
       toValue: 1,
-      duration: 1000
+      duration: 700
     }).start()
   }
 
@@ -102,7 +95,8 @@ const Onboard = ({ navigation }) => {
       image: IMG3
     },
     {
-      header: 'Start Your 7 Day Glo Sprint !',
+      header: 'Customise Your 7 Day Glo Sprint',
+      score: '& get Glos',
       content: <Rules next={onNextStep} />,
       icon: 'experiment',
       image: IMG2
@@ -112,10 +106,8 @@ const Onboard = ({ navigation }) => {
       score: '5 Glos a Day',
       content: (
         <Core
-          setBaseItems={setBaseItems}
+          {...{ setBaseItems, setValue, value }}
           resetBaseItems={newSet => reSetBase(newSet)}
-          setValue={setValue}
-          value={value}
           base={journey.base}
           next={onNextStep}
         />
@@ -128,10 +120,8 @@ const Onboard = ({ navigation }) => {
       score: `Max ${2 * MAX_DAILIES} Glos a Day`,
       content: (
         <Dailies
-          setDailies={setDailies}
+          {...{ setDailies, setValue, value }}
           resetDailies={newSet => reSetDalies(newSet)}
-          setValue={setValue}
-          value={value}
           dailies={journey.dailies}
           next={onNextStep}
         />
@@ -150,8 +140,7 @@ const Onboard = ({ navigation }) => {
           resetBonus={newSet => reSetBonus(newSet)}
           setBonus={setBonusItems}
           bonuses={journey.bonus}
-          setValue={setValue}
-          value={value}
+          {...{ setValue, value }}
         />
       )
     },
@@ -159,65 +148,12 @@ const Onboard = ({ navigation }) => {
       header: 'Your 7 day Glo Sprint',
       icon: 'eye',
       image: IMG7,
-      content: (
-        <View style={styles.section}>
-          <TheText xl centered color={specialText}>
-            Core focus
-          </TheText>
-          <TheText xxl bold centered color='white'>
-            '{journey.base}'
-          </TheText>
-          <TheText bold centered>
-            Earn 35 Glos over the Sprint
-          </TheText>
-          <BorderSpace />
-          <TheText xl centered color={specialText}>
-            Dailies
-          </TheText>
-          <View>
-            {journey.dailies.map((each, i) => (
-              <TheText xl bold centered color='white' key={'item' + i}>
-                ✓ - {each}
-              </TheText>
-            ))}
-          </View>
-          <TheText bold centered>
-            Earn 42 Glos over the Sprint
-          </TheText>
-          <BorderSpace />
-          <TheText xl centered color={specialText}>
-            Bonus
-          </TheText>
-          <TheText xl bold centered color='white'>
-            '{journey.bonus}'
-          </TheText>
-          <TheText bold centered>
-            Earn 5 Glos over the Sprint
-          </TheText>
-          <BorderSpace />
-          <TheText xl centered color={specialText}>
-            Earn a total of
-          </TheText>
-          <TheText xxxl centered bold color='white'>
-            82
-          </TheText>
-          <TheText xxl centered bold color='white'>
-            Glos
-          </TheText>
-
-          <Button style={{ ...brandShadow, ...brandGlow, margin: 20 }}>
-            <TheText bold color={specialText} onPress={() => navigate('Home', { journey })}>
-              Start your Glo Sprint !
-            </TheText>
-          </Button>
-        </View>
-      )
+      content: <Overview {...{ journey, navigate }} />
     }
   ]
 
-  const { container, backImage, view } = styles
-  const { navigate } = navigation
   const { header, icon, content, image, score } = steps[step]
+
   return (
     <ImageBackground source={image} style={backImage}>
       <ScrollView
@@ -242,7 +178,6 @@ const Onboard = ({ navigation }) => {
               </TheText>
             )}
           </Animated.View>
-
           {content}
           {step > 0 && (
             <Button type='ghost' onPress={() => onPreviousStep()}>

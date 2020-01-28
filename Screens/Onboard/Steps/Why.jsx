@@ -7,7 +7,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import { View } from 'react-native'
 import styles from '../Style'
 
-const { light, secondary, specialText } = COLOURS
+const { light, secondary } = COLOURS
 
 const Why = ({ nextSection }) => {
   const [why, setWhy] = useState({ goal: '', myWhy: '', pitfalls: '', solutions: '' })
@@ -79,7 +79,7 @@ const Why = ({ nextSection }) => {
           ) : null}
           <WhiteSpace size='lg' />
           <GoalForm
-            label={'What could be the solutions to counter-act the Pitfalls ?'}
+            label={'What counter-acts your Pitfalls ?'}
             val={why.solutions}
             onChange={solutions => setWhy({ ...why, solutions })}
             foot='This should inform your setup coming next!'
@@ -115,15 +115,16 @@ const Why = ({ nextSection }) => {
             <Button
               disabled={isDisabled}
               onPress={() => changeSection()}
-              style={styles.buttonStyle}>
-              <TheText bold large color={secondary} onPress={() => changeSection()}>
+              style={styles.buttonStyle}
+              type='primary'>
+              <TheText bold large color={light} onPress={() => changeSection()}>
                 {buttonText}
               </TheText>
             </Button>
           </View>
         ) : (
-          <Button onPress={() => nextSection} style={styles.buttonStyle}>
-            <TheText bold large color={secondary} onPress={() => nextSection()}>
+          <Button onPress={() => nextSection()} style={styles.buttonStyle} type='primary'>
+            <TheText bold large onPress={() => nextSection()}>
               Customise Sprint 💃🏻>
             </TheText>
           </Button>

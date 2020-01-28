@@ -6,20 +6,26 @@ import React from 'react'
 import { View } from 'react-native'
 import styles from '../Style'
 
+const { secondary, specialText, white } = COLOURS
 const Intro = ({ next, goHome }) => (
   <View style={styles.section}>
     <TheCard>
-      <TheText bold xl centered color={COLOURS.secondary}>
-        Welcome to Your Own Glo Sprint ! ☺️
+      <TheText bold xl centered color={secondary}>
+        Welcome to Your Glo Sprint!
       </TheText>
-      <TheText bold large centered color={COLOURS.secondary}>
-        Before you begin, consider conecting deeeply to the Reason - your WHY - for embarking on the
-        Glo Sprint - to keep you motivated for the 7 day Glo Sprint!
+      <TheText large centered color={secondary}>
+        Before you begin, consider discovering and conecting to the Reason
+      </TheText>
+      <TheText bold large centered color={specialText}>
+        - your WHY -
+      </TheText>
+      <TheText large centered color={secondary}>
+        for embarking on this journey - to keep you motivated for the next 7 days of Glo Sprint!
       </TheText>
     </TheCard>
     <WhiteSpace size='lg' />
     {[
-      { text: 'Set Your WHY! 🤸🏻‍', action: () => next(1) },
+      { text: 'Connect to your WHY! 🤸🏻‍', action: () => next(1), type: 'primary' },
       { text: 'Skip to Glo Sprint 🏁', action: () => next(2), type: 'ghost' }
     ].map(({ text, action, type }, i) => (
       <Button
@@ -27,7 +33,7 @@ const Intro = ({ next, goHome }) => (
         style={{ ...styles.buttonStyle, margin: 10 }}
         onPress={action}
         key={`buttons-${i}`}>
-        <TheText bold large color={COLOURS.secondary} onPress={action}>
+        <TheText bold large color={type === 'primary' && white} onPress={action}>
           {text}
         </TheText>
       </Button>

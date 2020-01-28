@@ -6,6 +6,10 @@ export const ONBOARD = {
   IMG5: require('./glo5.png'),
   IMG6: require('./glo6.png'),
   IMG7: require('./glo7.png'),
-  IMG8: require('./glo8.png'),
-  IMG9: require('./glo9.png')
+  IMG8: require('./glo8.png')
+}
+
+export const IMG = {
+  MOUNTAIN: require('./mountain.png'),
+  MOUNTAIN_PURPLE: require('./mountainPurple.png')
 }

@@ -7,17 +7,17 @@ import styles from '../Style'
 
 const RULES = [
   {
-    head: '1 - CORE 🏠',
+    head: '1. CORE 🏠',
     text: 'Choose Key Intention for your Glo Sprint',
     ex: 'Examples: "natural sugars only", "no smoking", "mindful and present throughout day"'
   },
   {
-    head: '2 - DAILIES 📅',
+    head: '2. DAILIES 📅',
     text: 'Choose 3 Tasks to complete each day',
     ex: 'Examples: "meditate 15 min", "drink 2L of water" '
   },
   {
-    head: '3 - BONUS 🔥',
+    head: '3. BONUS 🔥',
     text: 'Choose 1 Bonus Activity to complete over the Glo Sprint',
     ex: 'Examples: "spa day", "cleansing/fasting day"'
   }
@@ -38,9 +38,9 @@ const Rules = ({ next }) => (
         <TheText centered>{each.ex}</TheText>
       </View>
     ))}
-    <Button style={styles.buttonStyle} onPress={next}>
-      <TheText large bold color={secondary} onPress={next}>
-        Set Your Core >
+    <Button style={styles.buttonStyle} onPress={next} type='primary'>
+      <TheText large bold onPress={next}>
+        Set Core Focus>
       </TheText>
     </Button>
   </View>

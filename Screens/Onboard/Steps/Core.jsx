@@ -87,8 +87,8 @@ const Core = ({ setBaseItems, setValue, value, base, next, resetBaseItems }) => 
             {`Next step, choose ${MAX_DAILIES} dailies! 🙌`}
           </TheText>
           <WhiteSpace sixe='xl' />
-          <Button onPress={next} style={{ margin: 10 }}>
-            <TheText large bold color={secondary} onPress={next}>
+          <Button onPress={next} style={{ margin: 10 }} type='primary'>
+            <TheText large bold onPress={next}>
               Set DAILIES 📅>
             </TheText>
           </Button>

@@ -16,7 +16,7 @@ const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
   return (
     <View style={styles.section}>
       <TheText xl bold centered color={specialText}>
-        {`Choose your Bonus to complete in the Glo sprint:`}
+        {`Choose your Bonus to complete during the Glo sprint:`}
       </TheText>
       <OneLineInput
         head='Type in here:'
@@ -82,14 +82,14 @@ const Bonuses = ({ bonuses, next, setBonus, value, setValue, resetBonus }) => {
       ) : (
         <>
           <TheText xl bold centered color={specialText}>
-            You chose your BONUS items, whoa !
+            You chose your BONUS, whoa !
           </TheText>
           <TheText large bold centered>
-            Lets see what your Glo Sprint looks like
+            Lets view your Glo Sprint! 👀
           </TheText>
           <WhiteSpace sixe='xl' />
-          <Button onPress={next} style={{ margin: 10 }}>
-            <TheText large bold color={secondary} onPress={next}>
+          <Button onPress={next} style={{ margin: 10 }} type='primary'>
+            <TheText large bold onPress={next}>
               See Overview
             </TheText>
           </Button>

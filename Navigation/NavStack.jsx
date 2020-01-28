@@ -7,36 +7,49 @@ import { Onboard } from '../Screens/Onboard'
 import { Profile } from '../Screens/Profile'
 import React from 'react'
 import { createAppContainer } from 'react-navigation'
-import { createBottomTabNavigator } from 'react-navigation-tabs'
+import { createBottomTabNavigator, createAnimatedSwitchNavigator } from 'react-navigation-tabs'
 import { createStackNavigator } from 'react-navigation-stack'
+
+const needsOnboarding = false
+const initialRouteName = needsOnboarding ? 'Onboard' : 'Home'
 
 const customisedLook = {
   headerMode: 'screen',
   cardStyle: { backgroundColor: COLOURS.background },
   mode: 'card'
 }
+
 const HomeStack = createStackNavigator(
   {
-    Onboard,
     Home,
+    Onboard
+  },
+  {
+    ...customisedLook,
+    headerMode: 'none',
+    navigationOptions: {
+      tabBarVisible: !needsOnboarding
+    },
+    initialRouteName
+  }
+)
+const ProfileStack = createStackNavigator(
+  {
+    Profile
+  },
+  customisedLook
+)
+
+const CheckinStack = createStackNavigator(
+  {
     Checkin
   },
   customisedLook
 )
 
-const ProfileStack = createStackNavigator(
+const OnboardStack = createStackNavigator(
   {
-    Profile
-    // Details: DetailsScreen,
-    // Other: OtheerScreen,
-  },
-  customisedLook
-)
-const CheckinStack = createStackNavigator(
-  {
-    Checkin
-    // Details: DetailsScreen,
-    // Other: OtheerScreen,
+    Onboard
   },
   customisedLook
 )
@@ -48,10 +61,11 @@ const NavStack = createAppContainer(
       Profile: ProfileStack,
       Checkin: CheckinStack
     },
-    // other config for tab navigator
     {
       defaultNavigationOptions: ({ navigation }) => ({
         tabBarIcon: ({ focused, horizontal, tintColor }) => {
+          console.log('nav state----', navigation.state)
+
           const { routeName } = navigation.state
           let iconName
           if (routeName === 'Home') iconName = 'home'
@@ -72,7 +86,8 @@ const NavStack = createAppContainer(
       tabBarOptions: {
         activeTintColor: 'tomato',
         inactiveTintColor: 'gray'
-      }
+      },
+      initialRouteName: 'Home'
     }
   )
 )
